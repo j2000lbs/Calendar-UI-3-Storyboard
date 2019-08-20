@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Root View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Calendar_UI_3_Storyboard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RootViewController" customModule="Calendar_UI_3_Storyboard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="RootView">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="954"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,16 +31,20 @@
                                                     <constraint firstAttribute="width" constant="30" id="31S-rY-z92"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                <state key="normal" title="&lt;"/>
+                                                <state key="normal" title="&lt;">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Hh-lc-Xl3" userLabel="NextMonth">
                                                 <rect key="frame" x="730" y="1" width="30" height="33"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                <state key="normal" title="&gt;"/>
+                                                <state key="normal" title="&gt;">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Month Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jn8-At-mYT" userLabel="Month-Year">
-                                                <rect key="frame" x="339" y="8" width="91.5" height="20.5"/>
+                                                <rect key="frame" x="338.5" y="7.5" width="91.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -127,19 +131,37 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DateCell" id="nPj-ru-l0m">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DateCell" id="nPj-ru-l0m" customClass="CalendarViewCell" customModule="Calendar_UI_3_Storyboard" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ehv-Nm-Wcw">
+                                                            <rect key="frame" x="16" y="16" width="18.5" height="18"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
                                                 </view>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="Ehv-Nm-Wcw" firstAttribute="centerY" secondItem="nPj-ru-l0m" secondAttribute="centerY" id="8Dv-n1-4Y8"/>
+                                                    <constraint firstItem="Ehv-Nm-Wcw" firstAttribute="centerX" secondItem="nPj-ru-l0m" secondAttribute="centerX" id="TKx-y4-x37"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="dateCellLabel" destination="Ehv-Nm-Wcw" id="Kig-da-boN"/>
+                                                </connections>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="0.10113441780821918" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="1Rf-LV-Fr9" firstAttribute="top" secondItem="wym-mx-Yhx" secondAttribute="top" id="4Ob-0A-jaY"/>
                                     <constraint firstItem="gst-zC-HTa" firstAttribute="top" secondItem="Gxd-6T-vIg" secondAttribute="bottom" id="4V0-93-qoc"/>
@@ -154,7 +176,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wym-mx-Yhx" secondAttribute="bottom" id="1hX-ec-BJ5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wym-mx-Yhx" secondAttribute="trailing" id="DbL-y4-5nN"/>
@@ -163,12 +185,22 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="KCd-4D-X2o"/>
+                    <navigationItem key="navigationItem" id="KCd-4D-X2o">
+                        <barButtonItem key="rightBarButtonItem" title="Light" id="d46-5u-di7">
+                            <connections>
+                                <action selector="changeLightTheme:" destination="BYZ-38-t0r" id="PUh-iH-bRr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="calendarCollectionView" destination="gst-zC-HTa" id="F91-yb-xL1"/>
+                        <outlet property="daysStackView" destination="Gxd-6T-vIg" id="2uf-yV-IvU"/>
                         <outlet property="fridayLabel" destination="xTb-Jn-Cq9" id="ZSE-rc-tI3"/>
                         <outlet property="mondayLabel" destination="1zm-7u-Sxf" id="oKW-2z-Po7"/>
+                        <outlet property="monthView" destination="wym-mx-Yhx" id="bfQ-5n-miV"/>
                         <outlet property="monthYearLabel" destination="Jn8-At-mYT" id="j1W-H8-sz0"/>
+                        <outlet property="nextMonthButton" destination="1Hh-lc-Xl3" id="huI-Bv-bU4"/>
+                        <outlet property="previousMonthButton" destination="xyI-gn-dYp" id="VVY-CU-gOz"/>
                         <outlet property="saturdayLabel" destination="PkZ-kU-NE6" id="I4M-Fh-o4H"/>
                         <outlet property="sundayLabel" destination="0NS-my-2n7" id="ht8-Gx-TuE"/>
                         <outlet property="thursdayLabel" destination="tg6-Ne-xAo" id="cMg-Xt-Xdx"/>
