@@ -12,7 +12,6 @@ struct ColorThemeHelper {
 	
 	let appDelegate = UIApplication.shared.delegate as! AppDelegate
 	
-	
 	func changeLightTheme(visibleCells: [UICollectionViewCell]) {
 		
 		let rootViewController = getRootViewController()

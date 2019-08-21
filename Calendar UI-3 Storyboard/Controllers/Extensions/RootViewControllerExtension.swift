@@ -11,6 +11,7 @@ import UIKit
 /* This extension is used to provide a way to vary traits in the layout for the iPad orientations */
 
 extension RootViewController {
+	
 	override func overrideTraitCollection(forChild childViewController:
 											UIViewController) -> UITraitCollection? {
 		if view.bounds.width < view.bounds.height {
