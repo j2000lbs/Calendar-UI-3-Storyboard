@@ -8,7 +8,8 @@
 
 import UIKit
 
-class CalendarCollectionViewDelegate: NSObject, UICollectionViewDelegate {
+class CalendarCollectionViewDelegate: NSObject, UICollectionViewDelegate,
+												UICollectionViewDelegateFlowLayout {
 	
 	func collectionView(_ collectionView: UICollectionView,
 						shouldSelectItemAt indexPath: IndexPath) -> Bool {
@@ -50,10 +51,8 @@ class CalendarCollectionViewDelegate: NSObject, UICollectionViewDelegate {
 	func collectionView(_ collectionView: UICollectionView,
 						layout collectionViewLayout: UICollectionViewLayout,
 						sizeForItemAt indexPath: IndexPath) -> CGSize {
-		
-		let width = collectionView.frame.width / 7 - 8
-		//*******	let height: CGFloat = collectionView.frame.height / 5	// was: = 40
-		return CGSize(width: width, height: width)	// was: height: height
+		return CGSize(width: collectionView.frame.width / 7 - 6,
+					  height: collectionView.frame.width / 7 - 6)
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -63,4 +62,5 @@ class CalendarCollectionViewDelegate: NSObject, UICollectionViewDelegate {
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
 		return 8.0
 	}
+	
 }

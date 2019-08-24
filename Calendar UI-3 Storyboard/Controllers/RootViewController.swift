@@ -72,6 +72,7 @@ class RootViewController: UIViewController {
 		calendarCollectionView.dataSource = calendarCollectionViewDataSource
 		calendarCollectionView.delegate = calendarCollectionViewDelegate
 		
+//		calendarCollectionView.collectionViewLayout = CalendarCollectionViewLayout()
 	}
 	
 
@@ -111,6 +112,7 @@ class RootViewController: UIViewController {
 		monthYearLabel.text="\(propertyDelegate.monthNames[propertyDelegate.currentMonthIndex]) \(propertyDelegate.currentYear)"
 		didChange(month: propertyDelegate.currentMonthIndex, year: propertyDelegate.currentYear)
 	}
+	
 	
 }
 
