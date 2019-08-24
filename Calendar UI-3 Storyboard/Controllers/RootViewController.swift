@@ -17,6 +17,7 @@ class RootViewController: UIViewController {
 	@IBOutlet weak var thursdayLabel: UILabel!
 	@IBOutlet weak var fridayLabel: UILabel!
 	@IBOutlet weak var saturdayLabel: UILabel!
+	
 	@IBOutlet weak var monthYearLabel: UILabel!
 	
 	@IBOutlet weak var previousMonthButton: UIButton!
@@ -63,6 +64,8 @@ class RootViewController: UIViewController {
 		Style.darkTheme()
 		self.view.backgroundColor = Style.backgroundColor
 		monthYearLabel.textColor = Style.monthYearLabelColor
+		monthYearLabel.text =
+		"\(propertyDelegate.getMonthName(monthIndex: propertyDelegate.presentMonthIndex)) \(propertyDelegate.presentYear)"
 		for dayLabel in dayLabels {
 			dayLabel?.textColor = Style.dayNameLabelColor
 		}

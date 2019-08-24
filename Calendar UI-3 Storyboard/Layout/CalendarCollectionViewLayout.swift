@@ -43,8 +43,8 @@ class CalendarCollectionViewLayout: UICollectionViewLayout {
 			}
 		
 		itemSize = CGSize(width: ((UIApplication.shared.keyWindow!.rootViewController as! UINavigationController).viewControllers.first as!
-			RootViewController).calendarCollectionView.frame.width / 7 - 1,
-				  height: ((UIApplication.shared.keyWindow!.rootViewController as! UINavigationController).viewControllers.first as! RootViewController).calendarCollectionView.frame.width / 7 - 1)
+			RootViewController).calendarCollectionView.frame.width / 7 - 6,
+				  height: ((UIApplication.shared.keyWindow!.rootViewController as! UINavigationController).viewControllers.first as! RootViewController).calendarCollectionView.frame.width / 7 - 6)
 
 		print(((UIApplication.shared.keyWindow!.rootViewController as! UINavigationController).viewControllers.first as! RootViewController).calendarCollectionView.frame.width / 7 - 6)
 		

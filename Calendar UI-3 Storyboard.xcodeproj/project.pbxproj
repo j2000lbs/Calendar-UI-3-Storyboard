@@ -86,6 +86,8 @@
 		33D82EF323076F4E00DC9196 /* Calendar UI-3 Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				33D82F0723076FC600DC9196 /* Controllers */,
+				33D82F0623076F9900DC9196 /* Storyboards */,
 				33D82F3D230F460200DC9196 /* Layout */,
 				33D82EF423076F4E00DC9196 /* AppDelegate.swift */,
 				33D82F34230CEB9D00DC9196 /* DelegatesAndDataSource */,
@@ -93,8 +95,6 @@
 				33D82F26230C901200DC9196 /* Helpers */,
 				33D82F21230C856800DC9196 /* Protocols */,
 				33D82F0D2308F89E00DC9196 /* Cells */,
-				33D82F0723076FC600DC9196 /* Controllers */,
-				33D82F0623076F9900DC9196 /* Storyboards */,
 				33D82F102309239100DC9196 /* ColorThemes */,
 				33D82EFB23076F5000DC9196 /* Assets.xcassets */,
 				33D82F0023076F5000DC9196 /* Info.plist */,

@@ -22,4 +22,8 @@ struct CalendarProperties {
 	var todaysDate = 0
 	var firstDayOfMonth = 0
 	var previouslySelectedCellDate: String?
+	
+	func getMonthName(monthIndex: Int) -> String {
+		return monthNames[monthIndex]
+	}
 }

@@ -11,10 +11,11 @@ import Foundation
 
 extension RootViewController {
 	
-	// Method to retrieve the first day of a given month and year.
+	/* Method to retrieve the first day of a given month and year. 1 needs to be added to the index to access the current month from Date (the index is used in an array, Date is not. */
 	func getFirstDayOfMonth() -> Int {
 		let day =
-			("\(propertyDelegate.currentMonthIndex)-01-\(propertyDelegate.currentYear)".date?.firstDayOfMonth.dayOfWeek)!
+			("\(propertyDelegate.currentMonthIndex + 1)-01-\(propertyDelegate.currentYear)"
+				.date?.firstDayOfMonth.dayOfWeek)!
 		return day
 	}
 }
