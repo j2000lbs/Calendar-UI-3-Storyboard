@@ -45,9 +45,10 @@ class CalendarCollectionViewDelegate: NSObject, UICollectionViewDelegate,
 			else { return }
 		cell.backgroundColor = UIColor.clear
 		let cellLabel = cell.subviews[1] as! UILabel
-		/**/		cellLabel.textColor = Style.deselecttedCellLabelTextColor
+		cellLabel.textColor = Style.deselecttedCellLabelTextColor
 	}
 	
+	// This method works for iPhone 8, iPad 9.7" Portrait & Landscape
 	func collectionView(_ collectionView: UICollectionView,
 						layout collectionViewLayout: UICollectionViewLayout,
 						sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -55,12 +56,17 @@ class CalendarCollectionViewDelegate: NSObject, UICollectionViewDelegate,
 					  height: collectionView.frame.width / 7 - 6)
 	}
 	
-	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+	func collectionView(_ collectionView: UICollectionView,
+						layout collectionViewLayout: UICollectionViewLayout,
+						minimumLineSpacingForSectionAt section: Int) -> CGFloat {
 		return 8.0
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
 		return 8.0
 	}
+	
+	
+	
 	
 }

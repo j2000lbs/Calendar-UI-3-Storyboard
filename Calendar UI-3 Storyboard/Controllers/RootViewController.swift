@@ -25,10 +25,17 @@ class RootViewController: UIViewController {
 	
 	@IBOutlet weak var monthView: UIView!
 	
-	// may not need these since I have the one above
 	
+	// may not need these since I have the one above
 	@IBOutlet weak var daysStackView: UIStackView!
 	@IBOutlet weak var calendarCollectionView: UICollectionView!
+	
+	// Constraint Outlets
+	@IBOutlet weak var calendarViewBottonConstraint: NSLayoutConstraint!
+	@IBOutlet weak var calendarViewTrailingConstraint: NSLayoutConstraint!
+	@IBOutlet weak var calendarViewLeadingConstraint: NSLayoutConstraint!
+	@IBOutlet weak var calendarViewTopConstraint: NSLayoutConstraint!
+	
 	
 	var colorThemeHelper = ColorThemeHelper()
 	let helper = Helpers()
@@ -117,5 +124,10 @@ class RootViewController: UIViewController {
 	}
 	
 	
+	
 }
+
+
+
+
 

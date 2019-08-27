@@ -72,21 +72,21 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Gxd-6T-vIg" userLabel="Days Stack View">
                                         <rect key="frame" x="0.0" y="35" width="768" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Su" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0NS-my-2n7" userLabel="Su">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Su" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0NS-my-2n7" userLabel="Sunday Label">
                                                 <rect key="frame" x="0.0" y="0.0" width="106.5" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zm-7u-Sxf" userLabel="Mo">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zm-7u-Sxf" userLabel="Monday Label">
                                                 <rect key="frame" x="110.5" y="0.0" width="106" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUv-T5-0iR" userLabel="Tu">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUv-T5-0iR" userLabel="Tuesday Label">
                                                 <rect key="frame" x="220.5" y="0.0" width="106.5" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -131,21 +131,21 @@
                                         <rect key="frame" x="0.0" y="65" width="768" height="889"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="1" id="jsA-1A-62j">
-                                            <size key="itemSize" width="121" height="102"/>
+                                            <size key="itemSize" width="94" height="79"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DateCell" id="nPj-ru-l0m" customClass="CalendarViewCell" customModule="Calendar_UI_3_Storyboard" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="121" height="102"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="94" height="79"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="121" height="102"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="94" height="79"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ehv-Nm-Wcw">
-                                                            <rect key="frame" x="51.5" y="42" width="18.5" height="18"/>
+                                                            <rect key="frame" x="37.5" y="30.5" width="19" height="18"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -200,6 +200,10 @@
                     </navigationItem>
                     <connections>
                         <outlet property="calendarCollectionView" destination="gst-zC-HTa" id="F91-yb-xL1"/>
+                        <outlet property="calendarViewBottonConstraint" destination="1hX-ec-BJ5" id="hPq-2y-ocx"/>
+                        <outlet property="calendarViewLeadingConstraint" destination="RO2-Iv-xCS" id="pBF-DD-AQk"/>
+                        <outlet property="calendarViewTopConstraint" destination="ho9-g8-1SF" id="9IJ-Qw-u45"/>
+                        <outlet property="calendarViewTrailingConstraint" destination="DbL-y4-5nN" id="rt1-ks-hOp"/>
                         <outlet property="daysStackView" destination="Gxd-6T-vIg" id="2uf-yV-IvU"/>
                         <outlet property="fridayLabel" destination="xTb-Jn-Cq9" id="ZSE-rc-tI3"/>
                         <outlet property="mondayLabel" destination="1zm-7u-Sxf" id="oKW-2z-Po7"/>
@@ -216,7 +220,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="878.90625" y="764.0625"/>
+            <point key="canvasLocation" x="1177.34375" y="584.1796875"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="80d-DJ-qkp">
