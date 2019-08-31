@@ -19,56 +19,64 @@ class RootViewController: UIViewController {
 	@IBOutlet weak var saturdayLabel: UILabel!
 	
 	@IBOutlet weak var monthYearLabel: UILabel!
-	
 	@IBOutlet weak var previousMonthButton: UIButton!
 	@IBOutlet weak var nextMonthButton: UIButton!
-	
 	@IBOutlet weak var monthView: UIView!
-	
+	@IBOutlet weak var calendarView: UIView!
 	
 	// may not need these since I have the one above
 	@IBOutlet weak var daysStackView: UIStackView!
 	@IBOutlet weak var calendarCollectionView: UICollectionView!
 	
-	// Constraint Outlets
-	@IBOutlet weak var calendarViewBottonConstraint: NSLayoutConstraint!
-	@IBOutlet weak var calendarViewTrailingConstraint: NSLayoutConstraint!
-	@IBOutlet weak var calendarViewLeadingConstraint: NSLayoutConstraint!
-	@IBOutlet weak var calendarViewTopConstraint: NSLayoutConstraint!
-	
-	
 	var colorThemeHelper = ColorThemeHelper()
 	let helper = Helpers()
+	var propertyDelegate = CalendarProperties()
+	var iPhoneLayout: [NSLayoutConstraint]!
+	var iPadLayout: [NSLayoutConstraint]!
+	var iPadLandscapeLayout : [NSLayoutConstraint]!
+	
+	// These will be defined in viewDidLoad so rootViewController isn't nil when called
 	var calendarCollectionViewDataSource: CalendarCollectionViewDataSource!
 	var calendarCollectionViewDelegate: CalendarCollectionViewDelegate!
-	var propertyDelegate = CalendarProperties()
-	
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		calendarCollectionViewDelegate = CalendarCollectionViewDelegate()
-		calendarCollectionViewDataSource = CalendarCollectionViewDataSource()
+		// dayLabels is defined here vs prepertyDelegate due to using the outlets for each label.
+		let dayLabels = [sundayLabel, mondayLabel, tuesdayLabel, wednesdayLabel,
+						 thursdayLabel, fridayLabel, saturdayLabel]
+		Style.darkTheme()
+		iPhoneLayout =
+			[calendarView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
+			 calendarView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -12),
+			 calendarView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 12),
+			 calendarView.heightAnchor.constraint(equalToConstant: 360)]
+		iPadLayout =
+			[calendarView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
+			 calendarView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -12),
+			 calendarView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 12),
+			 calendarView.heightAnchor.constraint(equalToConstant: 670)]
+		iPadLandscapeLayout =
+			[calendarView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
+			 calendarView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 12),
+			 calendarView.heightAnchor.constraint(equalToConstant: 600),
+			 calendarView.widthAnchor.constraint(equalToConstant: 600)]
 		
-		
-		if propertyDelegate.currentMonthIndex == 2 &&
-					helper.isLeapYear(currentYear: propertyDelegate.currentYear) {
-			propertyDelegate.numOfDaysInMonth[propertyDelegate.currentMonthIndex - 1] = 29
-		}
-		propertyDelegate.currentMonthIndex = Calendar.current.component(.month, from: Date()) - 1
+		propertyDelegate.currentMonthNumber = Calendar.current.component(.month, from: Date())
 		propertyDelegate.currentYear = Calendar.current.component(.year, from: Date())
-		propertyDelegate.numOfDaysInMonth = [31,28,31,30,31,30,31,31,30,31,30,31]
 		propertyDelegate.presentMonthIndex = Calendar.current.component(.month, from: Date())
 		propertyDelegate.todaysDate = Calendar.current.component(.day, from: Date())
-		propertyDelegate.presentMonthIndex = propertyDelegate.currentMonthIndex
+		propertyDelegate.presentMonthIndex = propertyDelegate.currentMonthNumber
 		propertyDelegate.presentYear = propertyDelegate.currentYear
 		propertyDelegate.firstDayOfMonth = getFirstDayOfMonth()   //(Sunday-Saturday 1-7)
 		
-		let dayLabels = [sundayLabel, mondayLabel, tuesdayLabel, wednesdayLabel,
-						 thursdayLabel, fridayLabel, saturdayLabel]
+		// For leap year make February have 29 days
+		if propertyDelegate.currentMonthNumber == 2 &&
+			helper.isLeapYear(currentYear: propertyDelegate.currentYear) {
+			propertyDelegate.numOfDaysInMonth[propertyDelegate.currentMonthNumber - 1] = 29
+		}
 		
 		self.title = "Joel's Schedule"
-		Style.darkTheme()
 		self.view.backgroundColor = Style.backgroundColor
 		monthYearLabel.textColor = Style.monthYearLabelColor
 		monthYearLabel.text =
@@ -77,12 +85,30 @@ class RootViewController: UIViewController {
 			dayLabel?.textColor = Style.dayNameLabelColor
 		}
 		
-		previousMonthButton.isEnabled = false
+		/* the following if-else statement ensures the correct height is set for different devices. */
+		if traitCollection.horizontalSizeClass == .regular &&
+			traitCollection.verticalSizeClass == .regular {		// for iPad
+			if UIDevice.current.orientation.isLandscape {
+				print("Landscape")
+				NSLayoutConstraint.deactivate(iPadLayout)
+				NSLayoutConstraint.activate(iPadLandscapeLayout)
+			} else {
+				print("Portrait")
+				NSLayoutConstraint.activate(iPadLayout)
+			}
+		} else {			// for iPhone
+			NSLayoutConstraint.activate(iPhoneLayout)
+		}
 		
+		previousMonthButton.isEnabled = false
+		calendarCollectionView.allowsMultipleSelection = false
+		previousMonthButton.setTitleColor(UIColor.lightGray, for: .disabled)
+		
+		// These have to be defined in viewDidLoad so rootViewController isn't nil
+		calendarCollectionViewDataSource = CalendarCollectionViewDataSource()
+		calendarCollectionViewDelegate = CalendarCollectionViewDelegate()
 		calendarCollectionView.dataSource = calendarCollectionViewDataSource
 		calendarCollectionView.delegate = calendarCollectionViewDelegate
-		
-//		calendarCollectionView.collectionViewLayout = CalendarCollectionViewLayout()
 	}
 	
 
@@ -102,25 +128,27 @@ class RootViewController: UIViewController {
 	
 	
 	@IBAction func previousMonthButton(_ sender: Any) {
-		propertyDelegate.currentMonthIndex -= 1
-		if propertyDelegate.currentMonthIndex < 0 {
-			propertyDelegate.currentMonthIndex = 11
+		propertyDelegate.currentMonthNumber -= 1
+		if propertyDelegate.currentMonthNumber < 1 {
+			propertyDelegate.currentMonthNumber = 12
 			propertyDelegate.currentYear -= 1
 		}
+		//  Added - 1 to access the correct month name from the array
 		monthYearLabel.text =
-			"\(propertyDelegate.monthNames[propertyDelegate.currentMonthIndex]) \(propertyDelegate.currentYear)"
-		didChange(month: propertyDelegate.currentMonthIndex, year: propertyDelegate.currentYear)
+			"\(propertyDelegate.monthNames[propertyDelegate.currentMonthNumber - 1]) \(propertyDelegate.currentYear)"
+		didChange(month: propertyDelegate.currentMonthNumber, year: propertyDelegate.currentYear)
 	}
 	
 	
 	@IBAction func nextMonthButton(_ sender: Any) {
-		propertyDelegate.currentMonthIndex += 1
-		if propertyDelegate.currentMonthIndex > 11 {
-			propertyDelegate.currentMonthIndex = 0
+		propertyDelegate.currentMonthNumber += 1
+		if propertyDelegate.currentMonthNumber > 12 {
+			propertyDelegate.currentMonthNumber = 1
 			propertyDelegate.currentYear += 1
 		}
-		monthYearLabel.text="\(propertyDelegate.monthNames[propertyDelegate.currentMonthIndex]) \(propertyDelegate.currentYear)"
-		didChange(month: propertyDelegate.currentMonthIndex, year: propertyDelegate.currentYear)
+		//  Added - 1 to access the correct month name from the array
+		monthYearLabel.text="\(propertyDelegate.monthNames[propertyDelegate.currentMonthNumber - 1]) \(propertyDelegate.currentYear)"
+		didChange(month: propertyDelegate.currentMonthNumber, year: propertyDelegate.currentYear)
 	}
 	
 	

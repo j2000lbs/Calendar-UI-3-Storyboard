@@ -10,7 +10,7 @@ import UIKit
 
 class CalendarViewCell: UICollectionViewCell {
 	
-	@IBOutlet var dateCellLabel: UILabel!
+	@IBOutlet weak var dateCellLabel: UILabel!
 	
 	override func awakeFromNib() {
 		super.awakeFromNib()

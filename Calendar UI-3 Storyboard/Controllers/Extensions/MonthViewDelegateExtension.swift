@@ -10,17 +10,19 @@ import UIKit
 
 extension RootViewController: MonthViewDelegate {
 	
-	func didChange(month monthIndex: Int, year: Int) {
+	// I think I can eliminate passing data in.
+	func didChange(month monthNumber: Int, year: Int) {
 		
-		propertyDelegate.currentMonthIndex = monthIndex + 1
-		propertyDelegate.currentYear = year
+		// Not needed as property.currentMonthNumber is what is passed in same for year
+//		propertyDelegate.currentMonthNumber = monthNumber + 1
+//		propertyDelegate.currentYear = year
 		
-		//for leap year, make february month of 29 days
-		if monthIndex == 1 {
+		/* for leap year, make february month of 29 days. February == 2.  1 is subtracted from monthNumber to access the array numOfDaysInMonth */
+		if monthNumber == 2 {
 			if helper.isLeapYear(currentYear: propertyDelegate.currentYear) {
-				propertyDelegate.numOfDaysInMonth[monthIndex] = 29
+				propertyDelegate.numOfDaysInMonth[monthNumber - 1] = 29
 			} else {
-				propertyDelegate.numOfDaysInMonth[monthIndex] = 28
+				propertyDelegate.numOfDaysInMonth[monthNumber - 1] = 28
 			}
 		}
 
@@ -29,7 +31,7 @@ extension RootViewController: MonthViewDelegate {
 		calendarCollectionView.reloadData()
 
 		previousMonthButton.isEnabled =
-			!(propertyDelegate.currentMonthIndex == propertyDelegate.presentMonthIndex &&
+			!(propertyDelegate.currentMonthNumber == propertyDelegate.presentMonthIndex &&
 				propertyDelegate.currentYear == propertyDelegate.presentYear)
 	}
 }

@@ -11,6 +11,8 @@ import UIKit
 class CalendarCollectionViewDelegate: NSObject, UICollectionViewDelegate,
 												UICollectionViewDelegateFlowLayout {
 	
+	let rootViewController = (UIApplication.shared.keyWindow!.rootViewController as! UINavigationController).viewControllers.first as! RootViewController
+	
 	func collectionView(_ collectionView: UICollectionView,
 						shouldSelectItemAt indexPath: IndexPath) -> Bool {
 		
@@ -21,7 +23,7 @@ class CalendarCollectionViewDelegate: NSObject, UICollectionViewDelegate,
 				else { return false }
 			cell.backgroundColor = UIColor.clear
 			let cellLabel = cell.subviews[1] as! UILabel
-			/**/			cellLabel.textColor = Style.deselecttedCellLabelTextColor
+			cellLabel.textColor = Style.deselecttedCellLabelTextColor
 		} else {
 			return true
 		}
@@ -52,8 +54,12 @@ class CalendarCollectionViewDelegate: NSObject, UICollectionViewDelegate,
 	func collectionView(_ collectionView: UICollectionView,
 						layout collectionViewLayout: UICollectionViewLayout,
 						sizeForItemAt indexPath: IndexPath) -> CGSize {
-		return CGSize(width: collectionView.frame.width / 7 - 6,
-					  height: collectionView.frame.width / 7 - 6)
+		let numberOfColumns = CGFloat(rootViewController.propertyDelegate.numberOfColumns)
+		let numberOfColumnSpaces =
+			CGFloat(rootViewController.propertyDelegate.numberOfColumnSpaces)
+		
+		let side = (collectionView.frame.width / numberOfColumns) - numberOfColumnSpaces
+		return CGSize(width: side, height: side)
 	}
 	
 	func collectionView(_ collectionView: UICollectionView,

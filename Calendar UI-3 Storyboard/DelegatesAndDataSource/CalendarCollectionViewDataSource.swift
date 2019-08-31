@@ -11,12 +11,13 @@ import UIKit
 class CalendarCollectionViewDataSource: NSObject, UICollectionViewDataSource {
 	
 	let rootViewController =
-		(UIApplication.shared.keyWindow?.rootViewController as! UINavigationController).viewControllers.first as! RootViewController
+		(UIApplication.shared.keyWindow?.rootViewController as!
+			UINavigationController).viewControllers.first as! RootViewController
 	
 	func collectionView(_ collectionView: UICollectionView,
 						numberOfItemsInSection section: Int) -> Int {
 		 var propertyDelegate = rootViewController.propertyDelegate
-		return propertyDelegate.numOfDaysInMonth[propertyDelegate.currentMonthIndex - 1] +
+		return propertyDelegate.numOfDaysInMonth[propertyDelegate.currentMonthNumber - 1] +
 			propertyDelegate.firstDayOfMonth - 1
 	}
 	
@@ -36,14 +37,14 @@ class CalendarCollectionViewDataSource: NSObject, UICollectionViewDataSource {
 			cell.dateCellLabel.text = "\(calculateDate)"
 			if calculateDate < propertyDelegate.todaysDate &&
 				propertyDelegate.currentYear == propertyDelegate.presentYear &&
-				propertyDelegate.currentMonthIndex == propertyDelegate.presentMonthIndex {
+				propertyDelegate.currentMonthNumber == propertyDelegate.presentMonthIndex {
 
 				cell.isUserInteractionEnabled = false
 				cell.dateCellLabel.textColor = UIColor.lightGray
 			} else {
 				cell.isUserInteractionEnabled = true
 				cell.dateCellLabel.textColor = Style.deselecttedCellLabelTextColor
-				/* The following if-statemet fixes the bug of a selected cell not having the correct background color after scrolling and/or changing orientation. */
+				/* The following if-statemet sets the correct cell background color of a selected cell after scrolling and/or changing orientation. */
 				if cell.isSelected {
 					cell.backgroundColor = Style.selectedCellBackgroundColor
 					cell.dateCellLabel.textColor = Style.selectedCellLabelTextColor

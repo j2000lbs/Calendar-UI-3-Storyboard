@@ -71,6 +71,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		331F81BA2315DA710057C812 /* Not Used at this time */ = {
+			isa = PBXGroup;
+			children = (
+				33D82F3E230F468700DC9196 /* CalendarCollectionViewLayout.swift */,
+				33A0A6FB2313480500E0A5D8 /* ColumnFlowLayout.swift */,
+			);
+			path = "Not Used at this time";
+			sourceTree = "<group>";
+		};
 		33D82EE823076F4E00DC9196 = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +109,7 @@
 				33D82F21230C856800DC9196 /* Protocols */,
 				33D82F0D2308F89E00DC9196 /* Cells */,
 				33D82F102309239100DC9196 /* ColorThemes */,
+				331F81BA2315DA710057C812 /* Not Used at this time */,
 				33D82EFB23076F5000DC9196 /* Assets.xcassets */,
 				33D82F0023076F5000DC9196 /* Info.plist */,
 			);
@@ -192,8 +202,6 @@
 		33D82F3D230F460200DC9196 /* Layout */ = {
 			isa = PBXGroup;
 			children = (
-				33D82F3E230F468700DC9196 /* CalendarCollectionViewLayout.swift */,
-				33A0A6FB2313480500E0A5D8 /* ColumnFlowLayout.swift */,
 			);
 			path = Layout;
 			sourceTree = "<group>";

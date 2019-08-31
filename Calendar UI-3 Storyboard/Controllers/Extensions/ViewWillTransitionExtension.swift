@@ -16,19 +16,22 @@ extension RootViewController {
 		
 		// regular - regular size class is the iPad
 		if traitCollection.horizontalSizeClass == .regular &&
-			traitCollection.verticalSizeClass == .regular {
+						traitCollection.verticalSizeClass == .regular {
 			if UIDevice.current.orientation.isLandscape {
-				print("Landscape")
-				calendarViewTrailingConstraint.constant = 384
-				calendarViewBottonConstraint.constant = 38
-				
-				// need to run the item size code again.
+				print("Landscape from willTransition...")
+				NSLayoutConstraint.deactivate(iPadLayout)
+				NSLayoutConstraint.activate(iPadLandscapeLayout)
 			} else {
 				print("Portrait")
-				calendarViewTrailingConstraint.constant = 0
-				calendarViewBottonConstraint.constant = 0
-				
+				NSLayoutConstraint.deactivate(iPadLandscapeLayout)
+				NSLayoutConstraint.activate(iPadLayout)
 			}
 		}
+	}
+	
+	/* This override was added to get the proper display after device rotation */
+	override func viewDidLayoutSubviews() {
+		super.viewDidLayoutSubviews()
+		calendarCollectionView.collectionViewLayout.invalidateLayout()
 	}
 }
