@@ -26,7 +26,7 @@ class RootViewController: UIViewController {
 	@IBOutlet weak var calendarView: UIView!
 	@IBOutlet weak var calendarCollectionView: UICollectionView!
 	
-	let helper = Helpers()
+	let calendarHelpers = CalendarHelpers()
 	var propertyDelegate = CalendarProperties()
 	var colorThemeHelper: ColorThemeHelper!
 	var dayLabels: [UILabel]!
@@ -70,7 +70,7 @@ class RootViewController: UIViewController {
 		
 		// For leap year make February have 29 days
 		if propertyDelegate.currentMonthNumber == 2 &&
-			helper.isLeapYear(currentYear: propertyDelegate.currentYear) {
+			calendarHelpers.isLeapYear(currentYear: propertyDelegate.currentYear) {
 			propertyDelegate.numOfDaysInMonth[propertyDelegate.currentMonthNumber - 1] = 29
 		}
 		
@@ -78,7 +78,7 @@ class RootViewController: UIViewController {
 		self.view.backgroundColor = Style.backgroundColor
 		monthYearLabel.textColor = Style.monthYearLabelColor
 		monthYearLabel.text =
-		"\(propertyDelegate.getMonthName(monthIndex: propertyDelegate.presentMonthIndex)) \(propertyDelegate.presentYear)"
+		"\(calendarHelpers.getMonthName(monthIndex: propertyDelegate.presentMonthIndex)) \(propertyDelegate.presentYear)"
 		for dayLabel in dayLabels {
 			dayLabel.textColor = Style.dayNameLabelColor
 		}

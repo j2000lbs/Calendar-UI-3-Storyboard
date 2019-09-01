@@ -19,7 +19,7 @@ extension RootViewController: MonthViewDelegate {
 		
 		/* for leap year, make february month of 29 days. February == 2.  1 is subtracted from monthNumber to access the array numOfDaysInMonth */
 		if monthNumber == 2 {
-			if helper.isLeapYear(currentYear: propertyDelegate.currentYear) {
+			if calendarHelpers.isLeapYear(currentYear: propertyDelegate.currentYear) {
 				propertyDelegate.numOfDaysInMonth[monthNumber - 1] = 29
 			} else {
 				propertyDelegate.numOfDaysInMonth[monthNumber - 1] = 28

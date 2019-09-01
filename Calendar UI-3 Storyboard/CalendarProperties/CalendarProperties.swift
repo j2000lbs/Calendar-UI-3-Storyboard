@@ -1,5 +1,5 @@
 //
-//  PropertyDelegate.swift
+//  CalendarProperties.swift
 //  Calendar UI-3 Storyboard
 //
 //  Created by Joel Ton on 8/21/19.
@@ -12,7 +12,7 @@ import Foundation
 struct CalendarProperties {
 	
 	var theme = LightThemes.dark
-	var monthNames = ["January", "February", "March", "April", "May", "June", "July",
+	let monthNames = ["January", "February", "March", "April", "May", "June", "July",
 					  "August", "September", "October", "November", "December"]
 	var numOfDaysInMonth = [31,28,31,30,31,30,31,31,30,31,30,31]
 	var currentMonthNumber = 0
@@ -24,8 +24,4 @@ struct CalendarProperties {
 	var previouslySelectedCellDate: String?
 	let numberOfColumns = 7   			// 7 days in a week
 	let numberOfColumnSpaces = 8
-	
-	func getMonthName(monthIndex: Int) -> String {
-		return monthNames[monthIndex - 1]
-	}
 }
