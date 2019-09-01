@@ -12,9 +12,10 @@ struct ColorThemeHelper {
 	
 	let rootViewController = (UIApplication.shared.keyWindow!.rootViewController as! UINavigationController).viewControllers.first as! RootViewController
 	
+	// Method used to change Light/Dark Theme
 	func changeLightTheme(visibleCells: [UICollectionViewCell]) {
 		
-		let dayLabels = makeDayLabelArray()
+		let dayLabels = rootViewController.dayLabels!
 		
 		rootViewController.previousMonthButton.setTitleColor(Style.previousMonthButtonColor,
 															 for: .normal)
@@ -39,12 +40,4 @@ struct ColorThemeHelper {
 			}
 		}
 	}
-	
-	private func makeDayLabelArray() -> [UILabel] {
-		return [rootViewController.sundayLabel, rootViewController.mondayLabel,
-				rootViewController.tuesdayLabel, rootViewController.wednesdayLabel,
-				rootViewController.thursdayLabel, rootViewController.fridayLabel,
-				rootViewController.saturdayLabel]
-	}
-	
 }

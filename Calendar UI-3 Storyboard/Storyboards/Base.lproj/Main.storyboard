@@ -200,10 +200,8 @@
                     <connections>
                         <outlet property="calendarCollectionView" destination="gst-zC-HTa" id="F91-yb-xL1"/>
                         <outlet property="calendarView" destination="OSc-yz-web" id="7g7-80-HQC"/>
-                        <outlet property="daysStackView" destination="Gxd-6T-vIg" id="2uf-yV-IvU"/>
                         <outlet property="fridayLabel" destination="xTb-Jn-Cq9" id="ZSE-rc-tI3"/>
                         <outlet property="mondayLabel" destination="1zm-7u-Sxf" id="oKW-2z-Po7"/>
-                        <outlet property="monthView" destination="1Rf-LV-Fr9" id="8fp-I8-9Ql"/>
                         <outlet property="monthYearLabel" destination="Jn8-At-mYT" id="j1W-H8-sz0"/>
                         <outlet property="nextMonthButton" destination="1Hh-lc-Xl3" id="huI-Bv-bU4"/>
                         <outlet property="previousMonthButton" destination="xyI-gn-dYp" id="VVY-CU-gOz"/>

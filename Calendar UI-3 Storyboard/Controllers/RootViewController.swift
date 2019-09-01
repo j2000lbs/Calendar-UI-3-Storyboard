@@ -17,22 +17,19 @@ class RootViewController: UIViewController {
 	@IBOutlet weak var thursdayLabel: UILabel!
 	@IBOutlet weak var fridayLabel: UILabel!
 	@IBOutlet weak var saturdayLabel: UILabel!
-	
 	@IBOutlet weak var monthYearLabel: UILabel!
+	
 	@IBOutlet weak var previousMonthButton: UIButton!
 	@IBOutlet weak var nextMonthButton: UIButton!
-	@IBOutlet weak var monthView: UIView!
-	@IBOutlet weak var calendarView: UIView!
-	
 	@IBOutlet weak var rightBarButtomItem: UIBarButtonItem!
 	
-	// may not need these since I have the one above
-	@IBOutlet weak var daysStackView: UIStackView!
+	@IBOutlet weak var calendarView: UIView!
 	@IBOutlet weak var calendarCollectionView: UICollectionView!
 	
-	var colorThemeHelper: ColorThemeHelper!
 	let helper = Helpers()
 	var propertyDelegate = CalendarProperties()
+	var colorThemeHelper: ColorThemeHelper!
+	var dayLabels: [UILabel]!
 	var iPhoneLayout: [NSLayoutConstraint]!
 	var iPadLayout: [NSLayoutConstraint]!
 	var iPadLandscapeLayout : [NSLayoutConstraint]!
@@ -44,8 +41,7 @@ class RootViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		// dayLabels is defined here vs prepertyDelegate due to using the outlets for each label.
-		let dayLabels = [sundayLabel, mondayLabel, tuesdayLabel, wednesdayLabel,
+		dayLabels = [sundayLabel, mondayLabel, tuesdayLabel, wednesdayLabel,
 						 thursdayLabel, fridayLabel, saturdayLabel]
 		Style.darkTheme()
 		iPhoneLayout =
@@ -84,7 +80,7 @@ class RootViewController: UIViewController {
 		monthYearLabel.text =
 		"\(propertyDelegate.getMonthName(monthIndex: propertyDelegate.presentMonthIndex)) \(propertyDelegate.presentYear)"
 		for dayLabel in dayLabels {
-			dayLabel?.textColor = Style.dayNameLabelColor
+			dayLabel.textColor = Style.dayNameLabelColor
 		}
 		
 		/* the following if-else statement ensures the correct height is set for different devices. */
