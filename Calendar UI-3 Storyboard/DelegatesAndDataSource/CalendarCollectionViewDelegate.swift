@@ -22,8 +22,8 @@ class CalendarCollectionViewDelegate: NSObject, UICollectionViewDelegate,
 			guard let cell = collectionView.cellForItem(at: indexPath) as? CalendarViewCell
 				else { return false }
 			cell.backgroundColor = UIColor.clear
-			let cellLabel = cell.subviews[1] as! UILabel
-			cellLabel.textColor = Style.deselecttedCellLabelTextColor
+//			let cellLabel = cell.subviews[1] as! UILabel
+			cell.dateCellLabel.textColor = Style.deselecttedCellLabelTextColor
 		} else {
 			return true
 		}
@@ -36,8 +36,9 @@ class CalendarCollectionViewDelegate: NSObject, UICollectionViewDelegate,
 		guard let cell = collectionView.cellForItem(at: indexPath) as? CalendarViewCell
 			else { return }
 		cell.backgroundColor = Style.selectedCellBackgroundColor
-		let cellLabel = cell.subviews[1] as! UILabel
-		cellLabel.textColor = Style.selectedCellLabelTextColor
+		cell.dateCellLabel.textColor = Style.selectedCellLabelTextColor
+//		let cellLabel = cell.subviews[1] as! UILabel
+//		cellLabel.textColor = Style.selectedCellLabelTextColor
 	}
 	
 	func collectionView(_ collectionView: UICollectionView,
@@ -46,8 +47,9 @@ class CalendarCollectionViewDelegate: NSObject, UICollectionViewDelegate,
 		guard let cell = collectionView.cellForItem(at: indexPath) as? CalendarViewCell
 			else { return }
 		cell.backgroundColor = UIColor.clear
-		let cellLabel = cell.subviews[1] as! UILabel
-		cellLabel.textColor = Style.deselecttedCellLabelTextColor
+		cell.dateCellLabel.textColor = Style.deselecttedCellLabelTextColor
+//		let cellLabel = cell.subviews[1] as! UILabel
+//		cellLabel.textColor = Style.deselecttedCellLabelTextColor
 	}
 	
 	// This method works for iPhone 8, iPad 9.7" Portrait & Landscape

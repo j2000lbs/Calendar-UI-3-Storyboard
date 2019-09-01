@@ -99,10 +99,10 @@
 		33D82EF323076F4E00DC9196 /* Calendar UI-3 Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				33D82EF423076F4E00DC9196 /* AppDelegate.swift */,
 				33D82F0723076FC600DC9196 /* Controllers */,
 				33D82F0623076F9900DC9196 /* Storyboards */,
 				33D82F3D230F460200DC9196 /* Layout */,
-				33D82EF423076F4E00DC9196 /* AppDelegate.swift */,
 				33D82F34230CEB9D00DC9196 /* DelegatesAndDataSource */,
 				33D82F2F230C94BB00DC9196 /* Extensions */,
 				33D82F26230C901200DC9196 /* Helpers */,

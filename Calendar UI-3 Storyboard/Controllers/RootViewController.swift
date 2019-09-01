@@ -24,11 +24,13 @@ class RootViewController: UIViewController {
 	@IBOutlet weak var monthView: UIView!
 	@IBOutlet weak var calendarView: UIView!
 	
+	@IBOutlet weak var rightBarButtomItem: UIBarButtonItem!
+	
 	// may not need these since I have the one above
 	@IBOutlet weak var daysStackView: UIStackView!
 	@IBOutlet weak var calendarCollectionView: UICollectionView!
 	
-	var colorThemeHelper = ColorThemeHelper()
+	var colorThemeHelper: ColorThemeHelper!
 	let helper = Helpers()
 	var propertyDelegate = CalendarProperties()
 	var iPhoneLayout: [NSLayoutConstraint]!
@@ -107,8 +109,13 @@ class RootViewController: UIViewController {
 		// These have to be defined in viewDidLoad so rootViewController isn't nil
 		calendarCollectionViewDataSource = CalendarCollectionViewDataSource()
 		calendarCollectionViewDelegate = CalendarCollectionViewDelegate()
+		colorThemeHelper = ColorThemeHelper()
 		calendarCollectionView.dataSource = calendarCollectionViewDataSource
 		calendarCollectionView.delegate = calendarCollectionViewDelegate
+		
+		let font = UIFont.systemFont(ofSize: 20)
+		rightBarButtomItem.setTitleTextAttributes([NSAttributedString.Key(rawValue:
+			NSAttributedString.Key.font.rawValue): font], for: .normal)
 	}
 	
 
