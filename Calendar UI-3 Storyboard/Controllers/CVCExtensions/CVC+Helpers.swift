@@ -16,7 +16,7 @@ extension CalendarViewController {
 	/* Method to retrieve the first day of a given month and year. 1 needs to be added to the index to access the current month from Date (the index is used in an array, Date is not. */
 	func getFirstDayOfMonth() -> Int {
 		let day =
-			("\(propertyDelegate.currentMonthNumber)-01-\(propertyDelegate.currentYear)"
+			("\(calendarProperties.currentMonthNumber)-01-\(calendarProperties.currentYear)"
 				.date?.firstDayOfMonth.dayOfWeek)!
 		return day
 	}
@@ -27,21 +27,21 @@ extension CalendarViewController {
 		
 		/* for leap year, make february month of 29 days. February == 2.  1 is subtracted from monthNumber to access the array numOfDaysInMonth */
 		if monthNumber == 2 {
-			if calendarHelpers.isLeapYear(currentYear: propertyDelegate.currentYear) {
-				propertyDelegate.numOfDaysInMonth[monthNumber - 1] = 29
+			if calendarHelpers.isLeapYear(currentYear: calendarProperties.currentYear) {
+				calendarProperties.numOfDaysInMonth[monthNumber - 1] = 29
 			} else {
-				propertyDelegate.numOfDaysInMonth[monthNumber - 1] = 28
+				calendarProperties.numOfDaysInMonth[monthNumber - 1] = 28
 			}
 		}
 		
-		propertyDelegate.firstDayOfMonth = getFirstDayOfMonth()
+		calendarProperties.firstDayOfMonth = getFirstDayOfMonth()
 		
 		calendarCollectionView.reloadData()
 		
 		// enable previousMonth button when viewing a future month, not the current month.
 		previousMonthButton.isEnabled =
-			!(propertyDelegate.currentMonthNumber == propertyDelegate.presentMonthIndex &&
-				propertyDelegate.currentYear == propertyDelegate.presentYear)
+			!(calendarProperties.currentMonthNumber == calendarProperties.presentMonthIndex &&
+				calendarProperties.currentYear == calendarProperties.presentYear)
 	}
 }
 

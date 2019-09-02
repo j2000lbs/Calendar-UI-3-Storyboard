@@ -56,9 +56,9 @@ class CalendarCollectionViewDelegate: NSObject, UICollectionViewDelegate,
 	func collectionView(_ collectionView: UICollectionView,
 						layout collectionViewLayout: UICollectionViewLayout,
 						sizeForItemAt indexPath: IndexPath) -> CGSize {
-		let numberOfColumns = CGFloat(calendarViewController.propertyDelegate.numberOfColumns)
+		let numberOfColumns = CGFloat(calendarViewController.calendarProperties.numberOfColumns)
 		let numberOfColumnSpaces =
-			CGFloat(calendarViewController.propertyDelegate.numberOfColumnSpaces)
+			CGFloat(calendarViewController.calendarProperties.numberOfColumnSpaces)
 		
 		let side = (collectionView.frame.width / numberOfColumns) - numberOfColumnSpaces
 		return CGSize(width: side, height: side)

@@ -27,7 +27,7 @@ class CalendarViewController: UIViewController {
 	@IBOutlet weak var calendarCollectionView: UICollectionView!
 	
 	let calendarHelpers = CalendarHelpers()
-	var propertyDelegate = CalendarProperties()
+	var calendarProperties = CalendarProperties()
 	var colorThemeHelper: ColorThemeHelper!
 	var dayLabels: [UILabel]!
 	var iPhoneLayout: [NSLayoutConstraint]!
@@ -60,25 +60,25 @@ class CalendarViewController: UIViewController {
 			 calendarView.heightAnchor.constraint(equalToConstant: 600),
 			 calendarView.widthAnchor.constraint(equalToConstant: 600)]
 		
-		propertyDelegate.currentMonthNumber = Calendar.current.component(.month, from: Date())
-		propertyDelegate.currentYear = Calendar.current.component(.year, from: Date())
-		propertyDelegate.presentMonthIndex = Calendar.current.component(.month, from: Date())
-		propertyDelegate.todaysDate = Calendar.current.component(.day, from: Date())
-		propertyDelegate.presentMonthIndex = propertyDelegate.currentMonthNumber
-		propertyDelegate.presentYear = propertyDelegate.currentYear
-		propertyDelegate.firstDayOfMonth = getFirstDayOfMonth()   //(Sunday-Saturday 1-7)
+		calendarProperties.currentMonthNumber = Calendar.current.component(.month, from: Date())
+		calendarProperties.currentYear = Calendar.current.component(.year, from: Date())
+		calendarProperties.presentMonthIndex = Calendar.current.component(.month, from: Date())
+		calendarProperties.todaysDate = Calendar.current.component(.day, from: Date())
+		calendarProperties.presentMonthIndex = calendarProperties.currentMonthNumber
+		calendarProperties.presentYear = calendarProperties.currentYear
+		calendarProperties.firstDayOfMonth = getFirstDayOfMonth()   //(Sunday-Saturday 1-7)
 		
 		// For leap year make February have 29 days
-		if propertyDelegate.currentMonthNumber == 2 &&
-			calendarHelpers.isLeapYear(currentYear: propertyDelegate.currentYear) {
-			propertyDelegate.numOfDaysInMonth[propertyDelegate.currentMonthNumber - 1] = 29
+		if calendarProperties.currentMonthNumber == 2 &&
+			calendarHelpers.isLeapYear(currentYear: calendarProperties.currentYear) {
+			calendarProperties.numOfDaysInMonth[calendarProperties.currentMonthNumber - 1] = 29
 		}
 		
 		self.title = "Joel's Schedule"
 		self.view.backgroundColor = Style.backgroundColor
 		monthYearLabel.textColor = Style.monthYearLabelColor
 		monthYearLabel.text =
-		"\(calendarHelpers.getMonthName(monthIndex: propertyDelegate.presentMonthIndex)) \(propertyDelegate.presentYear)"
+		"\(calendarHelpers.getMonthName(monthIndex: calendarProperties.presentMonthIndex)) \(calendarProperties.presentYear)"
 		for dayLabel in dayLabels {
 			dayLabel.textColor = Style.dayNameLabelColor
 		}
@@ -116,13 +116,13 @@ class CalendarViewController: UIViewController {
 	
 
 	@IBAction func changeLightTheme(_ sender: UIBarButtonItem) {
-		if propertyDelegate.theme == .dark {
+		if calendarProperties.theme == .dark {
 			sender.title = "Dark"
-			propertyDelegate.theme = .light
+			calendarProperties.theme = .light
 			Style.lightTheme()
 		} else {
 			sender.title = "Light"
-			propertyDelegate.theme = .dark
+			calendarProperties.theme = .dark
 			Style.darkTheme()
 		}
 		self.view.backgroundColor = Style.backgroundColor
@@ -131,27 +131,27 @@ class CalendarViewController: UIViewController {
 	
 	
 	@IBAction func previousMonthButton(_ sender: Any) {
-		propertyDelegate.currentMonthNumber -= 1
-		if propertyDelegate.currentMonthNumber < 1 {
-			propertyDelegate.currentMonthNumber = 12
-			propertyDelegate.currentYear -= 1
+		calendarProperties.currentMonthNumber -= 1
+		if calendarProperties.currentMonthNumber < 1 {
+			calendarProperties.currentMonthNumber = 12
+			calendarProperties.currentYear -= 1
 		}
 		//  Added - 1 to access the correct month name from the array
 		monthYearLabel.text =
-			"\(propertyDelegate.monthNames[propertyDelegate.currentMonthNumber - 1]) \(propertyDelegate.currentYear)"
-		didChange(month: propertyDelegate.currentMonthNumber, year: propertyDelegate.currentYear)
+			"\(calendarProperties.monthNames[calendarProperties.currentMonthNumber - 1]) \(calendarProperties.currentYear)"
+		didChange(month: calendarProperties.currentMonthNumber, year: calendarProperties.currentYear)
 	}
 	
 	
 	@IBAction func nextMonthButton(_ sender: Any) {
-		propertyDelegate.currentMonthNumber += 1
-		if propertyDelegate.currentMonthNumber > 12 {
-			propertyDelegate.currentMonthNumber = 1
-			propertyDelegate.currentYear += 1
+		calendarProperties.currentMonthNumber += 1
+		if calendarProperties.currentMonthNumber > 12 {
+			calendarProperties.currentMonthNumber = 1
+			calendarProperties.currentYear += 1
 		}
 		//  Added - 1 to access the correct month name from the array
-		monthYearLabel.text="\(propertyDelegate.monthNames[propertyDelegate.currentMonthNumber - 1]) \(propertyDelegate.currentYear)"
-		didChange(month: propertyDelegate.currentMonthNumber, year: propertyDelegate.currentYear)
+		monthYearLabel.text="\(calendarProperties.monthNames[calendarProperties.currentMonthNumber - 1]) \(calendarProperties.currentYear)"
+		didChange(month: calendarProperties.currentMonthNumber, year: calendarProperties.currentYear)
 	}
 	
 	
