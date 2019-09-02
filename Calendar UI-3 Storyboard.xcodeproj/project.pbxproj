@@ -114,7 +114,7 @@
 			children = (
 				33D82EF423076F4E00DC9196 /* AppDelegate.swift */,
 				33D82F0723076FC600DC9196 /* Controllers */,
-				33D82F34230CEB9D00DC9196 /* DelegatesAndDataSource */,
+				33D82F34230CEB9D00DC9196 /* CalCollectionViewDelegateAndDataSource */,
 				33D82F0623076F9900DC9196 /* Storyboards */,
 				331F81BD231C8CDE0057C812 /* CalendarProperties */,
 				33D82F2F230C94BB00DC9196 /* Swift Extensions */,
@@ -191,13 +191,13 @@
 			path = "Swift Extensions";
 			sourceTree = "<group>";
 		};
-		33D82F34230CEB9D00DC9196 /* DelegatesAndDataSource */ = {
+		33D82F34230CEB9D00DC9196 /* CalCollectionViewDelegateAndDataSource */ = {
 			isa = PBXGroup;
 			children = (
 				33D82F35230CEC2300DC9196 /* CalendarCollectionViewDataSource.swift */,
 				33D82F37230CF62600DC9196 /* CalendarCollectionViewDelegate.swift */,
 			);
-			path = DelegatesAndDataSource;
+			path = CalCollectionViewDelegateAndDataSource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
