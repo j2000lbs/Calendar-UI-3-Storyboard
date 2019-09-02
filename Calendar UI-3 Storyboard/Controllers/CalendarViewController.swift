@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RootViewController: UIViewController {
+class CalendarViewController: UIViewController {
 	
 	@IBOutlet weak var sundayLabel: UILabel!
 	@IBOutlet weak var mondayLabel: UILabel!
@@ -34,7 +34,7 @@ class RootViewController: UIViewController {
 	var iPadLayout: [NSLayoutConstraint]!
 	var iPadLandscapeLayout : [NSLayoutConstraint]!
 	
-	// These will be defined in viewDidLoad so rootViewController isn't nil when called
+	// These will be defined in viewDidLoad so calendarViewController isn't nil when called
 	var calendarCollectionViewDataSource: CalendarCollectionViewDataSource!
 	var calendarCollectionViewDelegate: CalendarCollectionViewDelegate!
 	
@@ -48,7 +48,7 @@ class RootViewController: UIViewController {
 			[calendarView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
 			 calendarView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -12),
 			 calendarView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 12),
-			 calendarView.heightAnchor.constraint(equalToConstant: 360)]
+			 calendarView.heightAnchor.constraint(equalToConstant: 380)]
 		iPadLayout =
 			[calendarView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
 			 calendarView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -12),
@@ -102,7 +102,7 @@ class RootViewController: UIViewController {
 		calendarCollectionView.allowsMultipleSelection = false
 		previousMonthButton.setTitleColor(UIColor.lightGray, for: .disabled)
 		
-		// These have to be defined in viewDidLoad so rootViewController isn't nil
+		// These have to be defined in viewDidLoad so calendarViewController isn't nil
 		calendarCollectionViewDataSource = CalendarCollectionViewDataSource()
 		calendarCollectionViewDelegate = CalendarCollectionViewDelegate()
 		colorThemeHelper = ColorThemeHelper()

@@ -10,18 +10,18 @@ import UIKit
 
 struct ColorThemeHelper {
 	
-	let rootViewController = (UIApplication.shared.keyWindow!.rootViewController as! UINavigationController).viewControllers.first as! RootViewController
+	let calendarViewController = (UIApplication.shared.keyWindow!.rootViewController as! UINavigationController).viewControllers.first as! CalendarViewController
 	
 	// Method used to change Light/Dark Theme
 	func changeLightTheme(visibleCells: [UICollectionViewCell]) {
 		
-		let dayLabels = rootViewController.dayLabels!
+		let dayLabels = calendarViewController.dayLabels!
 		
-		rootViewController.previousMonthButton.setTitleColor(Style.previousMonthButtonColor,
+		calendarViewController.previousMonthButton.setTitleColor(Style.previousMonthButtonColor,
 															 for: .normal)
-		rootViewController.nextMonthButton.setTitleColor(Style.nextMonthButtonColor,
+		calendarViewController.nextMonthButton.setTitleColor(Style.nextMonthButtonColor,
 														 for: .normal)
-		rootViewController.monthYearLabel.textColor = Style.monthYearLabelColor
+		calendarViewController.monthYearLabel.textColor = Style.monthYearLabelColor
 		
 		for daylabel in dayLabels {
 			daylabel.textColor = Style.dayNameLabelColor

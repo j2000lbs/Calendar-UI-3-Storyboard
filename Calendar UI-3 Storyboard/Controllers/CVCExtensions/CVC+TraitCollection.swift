@@ -1,5 +1,5 @@
 //
-//  RootViewControllerExtension.swift
+//  CVC+TraitCollection.swift
 //  Calendar UI-3 Storyboard
 //
 //  Created by Joel Ton on 8/18/19.
@@ -10,7 +10,7 @@ import UIKit
 
 /* This extension is used to provide a way to vary traits in the layout for the iPad orientations */
 
-extension RootViewController {
+extension CalendarViewController {
 	
 	override func overrideTraitCollection(forChild childViewController:
 											UIViewController) -> UITraitCollection? {

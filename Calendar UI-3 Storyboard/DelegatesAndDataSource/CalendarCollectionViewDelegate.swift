@@ -11,7 +11,7 @@ import UIKit
 class CalendarCollectionViewDelegate: NSObject, UICollectionViewDelegate,
 												UICollectionViewDelegateFlowLayout {
 	
-	let rootViewController = (UIApplication.shared.keyWindow!.rootViewController as! UINavigationController).viewControllers.first as! RootViewController
+	let calendarViewController = (UIApplication.shared.keyWindow!.rootViewController as! UINavigationController).viewControllers.first as! CalendarViewController
 	
 	func collectionView(_ collectionView: UICollectionView,
 						shouldSelectItemAt indexPath: IndexPath) -> Bool {
@@ -56,9 +56,9 @@ class CalendarCollectionViewDelegate: NSObject, UICollectionViewDelegate,
 	func collectionView(_ collectionView: UICollectionView,
 						layout collectionViewLayout: UICollectionViewLayout,
 						sizeForItemAt indexPath: IndexPath) -> CGSize {
-		let numberOfColumns = CGFloat(rootViewController.propertyDelegate.numberOfColumns)
+		let numberOfColumns = CGFloat(calendarViewController.propertyDelegate.numberOfColumns)
 		let numberOfColumnSpaces =
-			CGFloat(rootViewController.propertyDelegate.numberOfColumnSpaces)
+			CGFloat(calendarViewController.propertyDelegate.numberOfColumnSpaces)
 		
 		let side = (collectionView.frame.width / numberOfColumns) - numberOfColumnSpaces
 		return CGSize(width: side, height: side)

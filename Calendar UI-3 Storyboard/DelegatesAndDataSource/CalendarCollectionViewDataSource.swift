@@ -10,13 +10,13 @@ import UIKit
 
 class CalendarCollectionViewDataSource: NSObject, UICollectionViewDataSource {
 	
-	let rootViewController =
+	let calendarViewController =
 		(UIApplication.shared.keyWindow?.rootViewController as!
-			UINavigationController).viewControllers.first as! RootViewController
+			UINavigationController).viewControllers.first as! CalendarViewController
 	
 	func collectionView(_ collectionView: UICollectionView,
 						numberOfItemsInSection section: Int) -> Int {
-		 var propertyDelegate = rootViewController.propertyDelegate
+		 var propertyDelegate = calendarViewController.propertyDelegate
 		return propertyDelegate.numOfDaysInMonth[propertyDelegate.currentMonthNumber - 1] +
 			propertyDelegate.firstDayOfMonth - 1
 	}
@@ -25,7 +25,7 @@ class CalendarCollectionViewDataSource: NSObject, UICollectionViewDataSource {
 	func collectionView(_ collectionView: UICollectionView,
 						cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		
-		let propertyDelegate = rootViewController.propertyDelegate
+		let propertyDelegate = calendarViewController.propertyDelegate
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DateCell",
 													  for: indexPath) as! CalendarViewCell
 		cell.backgroundColor = UIColor.clear

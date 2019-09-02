@@ -1,5 +1,5 @@
 //
-//  RootViewControllerHelperExt.swift
+//  CVC+Helpers.swift
 //  Calendar UI-3 Storyboard
 //
 //  Created by Joel Ton on 8/20/19.
@@ -9,7 +9,7 @@
 import Foundation
 
 
-extension RootViewController {
+extension CalendarViewController {
 	
 	// MARK: - Helper methods
 	
@@ -22,7 +22,7 @@ extension RootViewController {
 	}
 	
 	
-	/* Method to change the month displayed when using the previousMonth and nextMonth Buttons */
+	/* Method to change the month displayed when using the previousMonth and nextMonth buttons */
 	func didChange(month monthNumber: Int, year: Int) {
 		
 		/* for leap year, make february month of 29 days. February == 2.  1 is subtracted from monthNumber to access the array numOfDaysInMonth */
@@ -38,6 +38,7 @@ extension RootViewController {
 		
 		calendarCollectionView.reloadData()
 		
+		// enable previousMonth button when viewing a future month, not the current month.
 		previousMonthButton.isEnabled =
 			!(propertyDelegate.currentMonthNumber == propertyDelegate.presentMonthIndex &&
 				propertyDelegate.currentYear == propertyDelegate.presentYear)

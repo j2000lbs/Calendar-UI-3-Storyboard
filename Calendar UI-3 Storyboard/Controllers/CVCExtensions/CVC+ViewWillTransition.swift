@@ -1,5 +1,5 @@
 //
-//  ViewWillTransitionExtension.swift
+//  CVC+ViewWillTransition.swift
 //  Calendar UI-3 Storyboard
 //
 //  Created by Joel Ton on 8/25/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension RootViewController {
+extension CalendarViewController {
 	
 	override func viewWillTransition(to size: CGSize,
 									 with coordinator: UIViewControllerTransitionCoordinator) {
