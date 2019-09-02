@@ -1,5 +1,5 @@
 //
-//  CalendarProperties.swift
+//  MyCalendar.swift
 //  Calendar UI-3 Storyboard
 //
 //  Created by Joel Ton on 8/21/19.
@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct CalendarProperties {
+struct MyCalendar {
 	
 	var theme = LightThemes.dark
 	let monthNames = ["January", "February", "March", "April", "May", "June", "July",
@@ -24,4 +24,16 @@ struct CalendarProperties {
 	var previouslySelectedCellDate: String?
 	let numberOfColumns = 7   			// 7 days in a week
 	let numberOfColumnSpaces = 8
+	
+	
+	// Method to determine leap year
+	func isLeapYear(currentYear: Int) -> Bool {
+		return currentYear % 4 == 0 && currentYear % 100 != 0 ||
+			currentYear % 400 == 0
+	}
+	
+	//  Returns the name of a month based on the month's number 1 - 12
+	func getMonthName(monthIndex: Int) -> String {
+		return monthNames[monthIndex - 1]
+	}
 }

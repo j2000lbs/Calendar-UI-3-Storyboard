@@ -15,7 +15,8 @@ class CalendarViewCell: UICollectionViewCell {
 	override func awakeFromNib() {
 		super.awakeFromNib()
 		
-		dateCellLabel.textColor = Style.deselecttedCellLabelTextColor
+		// pretty sure this is not needed now...leave for a few days to  make sure 9/2/2019
+//		dateCellLabel.textColor = Style.deselecttedCellLabelTextColor
 	}
 	
 	

@@ -16,28 +16,28 @@ class CalendarCollectionViewDataSource: NSObject, UICollectionViewDataSource {
 	
 	func collectionView(_ collectionView: UICollectionView,
 						numberOfItemsInSection section: Int) -> Int {
-		 var calendarProperties = calendarViewController.calendarProperties
-		return calendarProperties.numOfDaysInMonth[calendarProperties.currentMonthNumber - 1] +
-			calendarProperties.firstDayOfMonth - 1
+		 var myCalendar = calendarViewController.myCalendar
+		return myCalendar.numOfDaysInMonth[myCalendar.currentMonthNumber - 1] +
+			myCalendar.firstDayOfMonth - 1
 	}
 	
 	
 	func collectionView(_ collectionView: UICollectionView,
 						cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		
-		let calendarProperties = calendarViewController.calendarProperties
+		let myCalendar = calendarViewController.myCalendar
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DateCell",
 													  for: indexPath) as! CalendarViewCell
 		cell.backgroundColor = UIColor.clear
-		if indexPath.item <= calendarProperties.firstDayOfMonth - 2 {
+		if indexPath.item <= myCalendar.firstDayOfMonth - 2 {
 			cell.isHidden = true
 		} else {
-			let calculateDate = indexPath.row - calendarProperties.firstDayOfMonth + 2
+			let calculateDate = indexPath.row - myCalendar.firstDayOfMonth + 2
 			cell.isHidden = false
 			cell.dateCellLabel.text = "\(calculateDate)"
-			if calculateDate < calendarProperties.todaysDate &&
-				calendarProperties.currentYear == calendarProperties.presentYear &&
-				calendarProperties.currentMonthNumber == calendarProperties.presentMonthIndex {
+			if calculateDate < myCalendar.todaysDate &&
+				myCalendar.currentYear == myCalendar.presentYear &&
+				myCalendar.currentMonthNumber == myCalendar.presentMonthIndex {
 
 				cell.isUserInteractionEnabled = false
 				cell.dateCellLabel.textColor = UIColor.lightGray
