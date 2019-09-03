@@ -26,7 +26,7 @@ struct Style {
 		previousMonthButtonColor = UIColor.white
 		deselecttedCellLabelTextColor = UIColor.white
 		selectedCellLabelTextColor = UIColor.black
-		selectedCellBackgroundColor = Colors.skyBlue  // used ot be UIColor.black
+		selectedCellBackgroundColor = Colors.skyBlue  		// was .black
 		dayNameLabelColor = UIColor.white
 	}
 	

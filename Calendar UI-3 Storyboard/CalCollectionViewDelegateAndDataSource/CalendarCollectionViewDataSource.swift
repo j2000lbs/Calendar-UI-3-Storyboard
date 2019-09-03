@@ -25,6 +25,7 @@ class CalendarCollectionViewDataSource: NSObject, UICollectionViewDataSource {
 	func collectionView(_ collectionView: UICollectionView,
 						cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		
+		/* myCalendar is a constant here because its properties are accessed, not changed */
 		let myCalendar = calendarViewController.myCalendar
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DateCell",
 													  for: indexPath) as! CalendarViewCell

@@ -27,7 +27,7 @@ class CalendarViewController: UIViewController {
 	@IBOutlet weak var calendarCollectionView: UICollectionView!
 	
 	var myCalendar = MyCalendar()
-	var colorThemeHelper: ColorThemeHelper!
+	var lightThemeHelper: LightThemeHelper!
 	var dayLabels: [UILabel]!
 	var iPhoneLayout: [NSLayoutConstraint]!
 	var iPadLayout: [NSLayoutConstraint]!
@@ -104,7 +104,7 @@ class CalendarViewController: UIViewController {
 		// These have to be defined in viewDidLoad so calendarViewController isn't nil
 		calendarCollectionViewDataSource = CalendarCollectionViewDataSource()
 		calendarCollectionViewDelegate = CalendarCollectionViewDelegate()
-		colorThemeHelper = ColorThemeHelper()
+		lightThemeHelper = LightThemeHelper()
 		calendarCollectionView.dataSource = calendarCollectionViewDataSource
 		calendarCollectionView.delegate = calendarCollectionViewDelegate
 		
@@ -125,7 +125,7 @@ class CalendarViewController: UIViewController {
 			Style.darkTheme()
 		}
 		self.view.backgroundColor = Style.backgroundColor
-		colorThemeHelper.changeLightTheme(visibleCells: calendarCollectionView.visibleCells)
+		lightThemeHelper.changeLightTheme(visibleCells: calendarCollectionView.visibleCells)
 	}
 	
 	

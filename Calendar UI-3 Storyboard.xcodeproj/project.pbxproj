@@ -20,7 +20,7 @@
 		33D82F14230923D900DC9196 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82F13230923D900DC9196 /* Colors.swift */; };
 		33D82F16230923FB00DC9196 /* LightThemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82F15230923FB00DC9196 /* LightThemes.swift */; };
 		33D82F192309C23600DC9196 /* CVC+TraitCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82F182309C23600DC9196 /* CVC+TraitCollection.swift */; };
-		33D82F1B2309D79E00DC9196 /* ColorThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82F1A2309D79E00DC9196 /* ColorThemeHelper.swift */; };
+		33D82F1B2309D79E00DC9196 /* LightThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82F1A2309D79E00DC9196 /* LightThemeHelper.swift */; };
 		33D82F2E230C949700DC9196 /* CVC+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82F2D230C949700DC9196 /* CVC+Helpers.swift */; };
 		33D82F31230C94D100DC9196 /* String+dateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82F30230C94D100DC9196 /* String+dateFormatter.swift */; };
 		33D82F33230C94F900DC9196 /* Date+dayOfWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82F32230C94F900DC9196 /* Date+dayOfWeek.swift */; };
@@ -45,7 +45,7 @@
 		33D82F13230923D900DC9196 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		33D82F15230923FB00DC9196 /* LightThemes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightThemes.swift; sourceTree = "<group>"; };
 		33D82F182309C23600DC9196 /* CVC+TraitCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CVC+TraitCollection.swift"; sourceTree = "<group>"; };
-		33D82F1A2309D79E00DC9196 /* ColorThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorThemeHelper.swift; sourceTree = "<group>"; };
+		33D82F1A2309D79E00DC9196 /* LightThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightThemeHelper.swift; sourceTree = "<group>"; };
 		33D82F2D230C949700DC9196 /* CVC+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CVC+Helpers.swift"; sourceTree = "<group>"; };
 		33D82F30230C94D100DC9196 /* String+dateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+dateFormatter.swift"; sourceTree = "<group>"; };
 		33D82F32230C94F900DC9196 /* Date+dayOfWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+dayOfWeek.swift"; sourceTree = "<group>"; };
@@ -89,6 +89,15 @@
 				33D82F39230D94A000DC9196 /* MyCalendar.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		331F81C5231DF1B70057C812 /* CalendarViewController */ = {
+			isa = PBXGroup;
+			children = (
+				33D82EF623076F4E00DC9196 /* CalendarViewController.swift */,
+				33D82F172309C20F00DC9196 /* CVCExtensions */,
+			);
+			path = CalendarViewController;
 			sourceTree = "<group>";
 		};
 		33D82EE823076F4E00DC9196 = {
@@ -136,8 +145,7 @@
 		33D82F0723076FC600DC9196 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				33D82EF623076F4E00DC9196 /* CalendarViewController.swift */,
-				33D82F172309C20F00DC9196 /* CVCExtensions */,
+				331F81C5231DF1B70057C812 /* CalendarViewController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -156,7 +164,7 @@
 				33D82F13230923D900DC9196 /* Colors.swift */,
 				33D82F11230923B000DC9196 /* Styles.swift */,
 				33D82F15230923FB00DC9196 /* LightThemes.swift */,
-				33D82F1A2309D79E00DC9196 /* ColorThemeHelper.swift */,
+				33D82F1A2309D79E00DC9196 /* LightThemeHelper.swift */,
 			);
 			path = ColorThemes;
 			sourceTree = "<group>";
@@ -266,7 +274,7 @@
 				331F81C3231C8FF50057C812 /* String+date.swift in Sources */,
 				33D82F0F2308F8B800DC9196 /* CalendarViewCell.swift in Sources */,
 				33D82F14230923D900DC9196 /* Colors.swift in Sources */,
-				33D82F1B2309D79E00DC9196 /* ColorThemeHelper.swift in Sources */,
+				33D82F1B2309D79E00DC9196 /* LightThemeHelper.swift in Sources */,
 				33D82EF723076F4E00DC9196 /* CalendarViewController.swift in Sources */,
 				33D82F192309C23600DC9196 /* CVC+TraitCollection.swift in Sources */,
 				33D82F2E230C949700DC9196 /* CVC+Helpers.swift in Sources */,

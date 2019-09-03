@@ -1,5 +1,5 @@
 //
-//  ColorThemeHelper.swift
+//  LightThemeHelper.swift
 //  Calendar UI-3 Storyboard
 //
 //  Created by Joel Ton on 8/18/19.
@@ -8,14 +8,16 @@
 
 import UIKit
 
-struct ColorThemeHelper {
+struct LightThemeHelper {
 	
 	let calendarViewController = (UIApplication.shared.keyWindow!.rootViewController as! UINavigationController).viewControllers.first as! CalendarViewController
 	
 	// Method used to change Light/Dark Theme
 	func changeLightTheme(visibleCells: [UICollectionViewCell]) {
 		
-		let dayLabels = calendarViewController.dayLabels!
+		guard let dayLabels = calendarViewController.dayLabels else {
+			print("dayLabels was nil in changeLightTheme()")
+			return }
 		
 		calendarViewController.previousMonthButton.setTitleColor(Style.previousMonthButtonColor,
 															 for: .normal)
