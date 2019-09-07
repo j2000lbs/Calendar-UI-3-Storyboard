@@ -19,14 +19,14 @@ struct SkyBlueNightskyThemeHelper {
 			print("dayLabels was nil in changeColorTheme()")
 			return }
 		
-		calendarViewController.previousMonthButton.setTitleColor(Style.previousMonthButtonColor,
+		calendarViewController.previousMonthButton.setTitleColor(ColorStyle.previousMonthButtonColor,
 															 for: .normal)
-		calendarViewController.nextMonthButton.setTitleColor(Style.nextMonthButtonColor,
+		calendarViewController.nextMonthButton.setTitleColor(ColorStyle.nextMonthButtonColor,
 														 for: .normal)
-		calendarViewController.monthYearLabel.textColor = Style.monthYearLabelColor
+		calendarViewController.monthYearLabel.textColor = ColorStyle.monthYearLabelColor
 		
 		for daylabel in dayLabels {
-			daylabel.textColor = Style.dayNameLabelColor
+			daylabel.textColor = ColorStyle.dayNameLabelColor
 		}
 		
 		/* The following loop will set all of the cells of the dates of the month that haven't passed, therefore UserInteraction is enabled, to the deselected value.  The selected cell, if there is one, will remain with the selected values. */
@@ -34,11 +34,11 @@ struct SkyBlueNightskyThemeHelper {
 			guard let dateCell = cell as? CalendarViewCell
 				else { return }
 			if dateCell.isUserInteractionEnabled && !dateCell.isSelected {
-				dateCell.dateCellLabel.textColor = Style.deselectedCellLabelTextColor
+				dateCell.dateCellLabel.textColor = ColorStyle.deselectedCellLabelTextColor
 			}
 			if dateCell.isSelected {
-				dateCell.backgroundColor = Style.selectedCellBackgroundColor
-				dateCell.dateCellLabel.textColor = Style.selectedCellLabelTextColor
+				dateCell.backgroundColor = ColorStyle.selectedCellBackgroundColor
+				dateCell.dateCellLabel.textColor = ColorStyle.selectedCellLabelTextColor
 			}
 		}
 	}

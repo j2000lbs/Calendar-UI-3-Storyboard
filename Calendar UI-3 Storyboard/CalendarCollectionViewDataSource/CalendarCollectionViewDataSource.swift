@@ -37,11 +37,11 @@ class CalendarCollectionViewDataSource: NSObject, UICollectionViewDataSource {
 				cell.dateCellLabel.textColor = UIColor.lightGray
 			} else {
 				cell.isUserInteractionEnabled = true
-				cell.dateCellLabel.textColor = Style.deselectedCellLabelTextColor
+				cell.dateCellLabel.textColor = ColorStyle.deselectedCellLabelTextColor
 				/* The following if-statement sets the correct cell background color of a selected cell after scrolling and/or changing orientation. */
 				if cell.isSelected {
-					cell.backgroundColor = Style.selectedCellBackgroundColor
-					cell.dateCellLabel.textColor = Style.selectedCellLabelTextColor
+					cell.backgroundColor = ColorStyle.selectedCellBackgroundColor
+					cell.dateCellLabel.textColor = ColorStyle.selectedCellLabelTextColor
 				}
 			}
 		}

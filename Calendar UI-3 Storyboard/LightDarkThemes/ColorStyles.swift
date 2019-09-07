@@ -1,5 +1,5 @@
 //
-//  Styles.swift
+//  ColorStyles.swift
 //  Calendar UI-3 Storyboard
 //
 //  Created by Joel Ton on 8/18/19.
@@ -9,7 +9,7 @@
 import UIKit
 
 
-struct Style {
+struct ColorStyle {
 	
 	enum ColorThemes {
 		case skyBlue

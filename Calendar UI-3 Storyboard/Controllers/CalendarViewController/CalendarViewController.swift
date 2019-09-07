@@ -41,7 +41,7 @@ class CalendarViewController: UIViewController {
 		
 		dayLabels = [sundayLabel, mondayLabel, tuesdayLabel, wednesdayLabel,
 						 thursdayLabel, fridayLabel, saturdayLabel]
-		Style.nightSkyTheme()
+		ColorStyle.nightSkyTheme()
 		iPhoneLayout =
 			[calendarView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
 			 calendarView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -12),
@@ -73,12 +73,12 @@ class CalendarViewController: UIViewController {
 		}
 		
 		self.title = "Joel's Schedule"
-		self.view.backgroundColor = Style.backgroundColor
-		monthYearLabel.textColor = Style.monthYearLabelColor
+		self.view.backgroundColor = ColorStyle.backgroundColor
+		monthYearLabel.textColor = ColorStyle.monthYearLabelColor
 		monthYearLabel.text =
 		"\(MyCalendar.getMonthName(monthIndex: MyCalendar.presentMonthIndex)) \(MyCalendar.presentYear)"
 		for dayLabel in dayLabels {
-			dayLabel.textColor = Style.dayNameLabelColor
+			dayLabel.textColor = ColorStyle.dayNameLabelColor
 		}
 		
 		/* the following if-else statement ensures the correct height is set for different devices. */
@@ -117,13 +117,13 @@ class CalendarViewController: UIViewController {
 		if MyCalendar.theme == .nightSky {
 			sender.title = "Night Sky"
 			MyCalendar.theme = .skyBlue
-			Style.skyBlueTheme()
+			ColorStyle.skyBlueTheme()
 		} else {
 			sender.title = "Sky Blue"
 			MyCalendar.theme = .nightSky
-			Style.nightSkyTheme()
+			ColorStyle.nightSkyTheme()
 		}
-		self.view.backgroundColor = Style.backgroundColor
+		self.view.backgroundColor = ColorStyle.backgroundColor
 		skyBlueNightSkyThemeHelper.changeColorTheme(visibleCells: calendarCollectionView.visibleCells)
 	}
 	
