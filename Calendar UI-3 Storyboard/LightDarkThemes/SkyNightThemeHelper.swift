@@ -1,5 +1,5 @@
 //
-//  LightDarkThemeHelper.swift
+//  SkyNightThemeHelper.swift
 //  Calendar UI-3 Storyboard
 //
 //  Created by Joel Ton on 8/18/19.
@@ -8,15 +8,15 @@
 
 import UIKit
 
-struct LightDarkThemeHelper {
+struct SkyBlueNightskyThemeHelper {
 	
 	let calendarViewController = (UIApplication.shared.keyWindow!.rootViewController as! UINavigationController).viewControllers.first as! CalendarViewController
 	
-	// Method used to change Light/Dark Theme
-	func changeLightTheme(visibleCells: [UICollectionViewCell]) {
+	// Method used to change the Color Theme from Night Sky to Sky Blue
+	func changeColorTheme(visibleCells: [UICollectionViewCell]) {
 		
 		guard let dayLabels = calendarViewController.dayLabels else {
-			print("dayLabels was nil in changeLightTheme()")
+			print("dayLabels was nil in changeColorTheme()")
 			return }
 		
 		calendarViewController.previousMonthButton.setTitleColor(Style.previousMonthButtonColor,

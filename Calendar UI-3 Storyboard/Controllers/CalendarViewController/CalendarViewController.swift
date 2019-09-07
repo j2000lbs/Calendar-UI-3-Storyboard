@@ -26,7 +26,7 @@ class CalendarViewController: UIViewController {
 	@IBOutlet weak var calendarView: UIView!
 	@IBOutlet weak var calendarCollectionView: UICollectionView!
 	
-	var lightThemeHelper: LightDarkThemeHelper!
+	var skyBlueNightSkyThemeHelper: SkyBlueNightskyThemeHelper!
 	var dayLabels: [UILabel]!
 	var iPhoneLayout: [NSLayoutConstraint]!
 	var iPadLayout: [NSLayoutConstraint]!
@@ -41,7 +41,7 @@ class CalendarViewController: UIViewController {
 		
 		dayLabels = [sundayLabel, mondayLabel, tuesdayLabel, wednesdayLabel,
 						 thursdayLabel, fridayLabel, saturdayLabel]
-		Style.darkTheme()
+		Style.nightSkyTheme()
 		iPhoneLayout =
 			[calendarView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
 			 calendarView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -12),
@@ -103,7 +103,7 @@ class CalendarViewController: UIViewController {
 		// These have to be defined in viewDidLoad so calendarViewController isn't nil
 		calendarCollectionViewDataSource = CalendarCollectionViewDataSource()
 		calendarCollectionViewDelegate = CalendarCollectionViewDelegate()
-		lightThemeHelper = LightDarkThemeHelper()
+		skyBlueNightSkyThemeHelper = SkyBlueNightskyThemeHelper()
 		calendarCollectionView.dataSource = calendarCollectionViewDataSource
 		calendarCollectionView.delegate = calendarCollectionViewDelegate
 		
@@ -113,18 +113,18 @@ class CalendarViewController: UIViewController {
 	}
 	
 
-	@IBAction func changeLightTheme(_ sender: UIBarButtonItem) {
-		if MyCalendar.theme == .dark {
-			sender.title = "Dark"
-			MyCalendar.theme = .light
-			Style.lightTheme()
+	@IBAction func changeColorTheme(_ sender: UIBarButtonItem) {
+		if MyCalendar.theme == .nightSky {
+			sender.title = "Night Sky"
+			MyCalendar.theme = .skyBlue
+			Style.skyBlueTheme()
 		} else {
-			sender.title = "Light"
-			MyCalendar.theme = .dark
-			Style.darkTheme()
+			sender.title = "Sky Blue"
+			MyCalendar.theme = .nightSky
+			Style.nightSkyTheme()
 		}
 		self.view.backgroundColor = Style.backgroundColor
-		lightThemeHelper.changeLightTheme(visibleCells: calendarCollectionView.visibleCells)
+		skyBlueNightSkyThemeHelper.changeColorTheme(visibleCells: calendarCollectionView.visibleCells)
 	}
 	
 	

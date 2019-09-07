@@ -11,9 +11,9 @@ import UIKit
 
 struct Style {
 	
-	enum LightThemes {
-		case light
-		case dark
+	enum ColorThemes {
+		case skyBlue
+		case nightSky
 	}
 	
 	struct Colors {
@@ -31,7 +31,7 @@ struct Style {
 	static var selectedCellBackgroundColor = Colors.nightSky
 	static var dayNameLabelColor = UIColor.white
 	
-	static func darkTheme() {
+	static func nightSkyTheme() {
 		backgroundColor = Colors.nightSky
 		monthYearLabelColor = UIColor.white
 		nextMonthButtonColor = UIColor.white
@@ -42,7 +42,7 @@ struct Style {
 		dayNameLabelColor = UIColor.white
 	}
 	
-	static func lightTheme() {
+	static func skyBlueTheme() {
 		backgroundColor = Colors.skyBlue
 		monthYearLabelColor = UIColor.black
 		nextMonthButtonColor = UIColor.black

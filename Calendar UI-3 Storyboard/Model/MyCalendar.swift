@@ -11,7 +11,7 @@ import Foundation
 
 struct MyCalendar {
 	
-	static var theme = Style.LightThemes.dark
+	static var theme = Style.ColorThemes.nightSky
 	static let monthNames = ["January", "February", "March", "April", "May", "June", "July",
 					  "August", "September", "October", "November", "December"]
 	static var numOfDaysInMonth = [31,28,31,30,31,30,31,31,30,31,30,31]

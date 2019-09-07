@@ -191,9 +191,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="KCd-4D-X2o">
-                        <barButtonItem key="rightBarButtonItem" title="Light" id="d46-5u-di7">
+                        <barButtonItem key="rightBarButtonItem" title="Sky Blue" id="d46-5u-di7">
                             <connections>
-                                <action selector="changeLightTheme:" destination="BYZ-38-t0r" id="PUh-iH-bRr"/>
+                                <action selector="changeColorTheme:" destination="BYZ-38-t0r" id="PUh-iH-bRr"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
