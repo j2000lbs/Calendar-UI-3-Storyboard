@@ -10,13 +10,25 @@ import UIKit
 
 
 struct Style {
+	
+	enum LightThemes {
+		case light
+		case dark
+	}
+	
+	struct Colors {
+		static var skyBlue = #colorLiteral(red: 0.4620226622, green: 0.8382837176, blue: 1, alpha: 1)
+		static var nightSky = #colorLiteral(red: 0.08967345208, green: 0.2006737888, blue: 0.6619026065, alpha: 1)
+	}
+	
+	
 	static var backgroundColor = UIColor.white
 	static var monthYearLabelColor = UIColor.white
 	static var nextMonthButtonColor = UIColor.white
 	static var previousMonthButtonColor = UIColor.white
-	static var deselecttedCellLabelTextColor = UIColor.clear			// was .white
+	static var deselectedCellLabelTextColor = UIColor.clear
 	static var selectedCellLabelTextColor = UIColor.white
-	static var selectedCellBackgroundColor = Colors.nightSky			// was .black
+	static var selectedCellBackgroundColor = Colors.nightSky
 	static var dayNameLabelColor = UIColor.white
 	
 	static func darkTheme() {
@@ -24,9 +36,9 @@ struct Style {
 		monthYearLabelColor = UIColor.white
 		nextMonthButtonColor = UIColor.white
 		previousMonthButtonColor = UIColor.white
-		deselecttedCellLabelTextColor = UIColor.white
+		deselectedCellLabelTextColor = UIColor.white
 		selectedCellLabelTextColor = UIColor.black
-		selectedCellBackgroundColor = Colors.skyBlue  		// was .black
+		selectedCellBackgroundColor = Colors.skyBlue
 		dayNameLabelColor = UIColor.white
 	}
 	
@@ -35,9 +47,9 @@ struct Style {
 		monthYearLabelColor = UIColor.black
 		nextMonthButtonColor = UIColor.black
 		previousMonthButtonColor = UIColor.black
-		deselecttedCellLabelTextColor = UIColor.black
+		deselectedCellLabelTextColor = UIColor.black
 		selectedCellLabelTextColor = UIColor.white
-		selectedCellBackgroundColor = Colors.nightSky		// was .white
+		selectedCellBackgroundColor = Colors.nightSky
 		dayNameLabelColor = UIColor.black
 	}
 }

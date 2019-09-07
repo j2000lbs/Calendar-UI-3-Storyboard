@@ -1,5 +1,5 @@
 //
-//  LightThemeHelper.swift
+//  LightDarkThemeHelper.swift
 //  Calendar UI-3 Storyboard
 //
 //  Created by Joel Ton on 8/18/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct LightThemeHelper {
+struct LightDarkThemeHelper {
 	
 	let calendarViewController = (UIApplication.shared.keyWindow!.rootViewController as! UINavigationController).viewControllers.first as! CalendarViewController
 	
@@ -34,7 +34,7 @@ struct LightThemeHelper {
 			guard let dateCell = cell as? CalendarViewCell
 				else { return }
 			if dateCell.isUserInteractionEnabled && !dateCell.isSelected {
-				dateCell.dateCellLabel.textColor = Style.deselecttedCellLabelTextColor
+				dateCell.dateCellLabel.textColor = Style.deselectedCellLabelTextColor
 			}
 			if dateCell.isSelected {
 				dateCell.backgroundColor = Style.selectedCellBackgroundColor

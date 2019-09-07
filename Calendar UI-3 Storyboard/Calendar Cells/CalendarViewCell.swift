@@ -12,12 +12,11 @@ class CalendarViewCell: UICollectionViewCell {
 	
 	@IBOutlet weak var dateCellLabel: UILabel!
 	
-	override func awakeFromNib() {
-		super.awakeFromNib()
-		
-		// pretty sure this is not needed now...leave for a few days to  make sure 9/2/2019
-//		dateCellLabel.textColor = Style.deselecttedCellLabelTextColor
-	}
+	// I don't need this at this point, but leaving in for a possible furture use.
+	
+//	override func awakeFromNib() {
+//		super.awakeFromNib()
+//	}
 	
 	
 }

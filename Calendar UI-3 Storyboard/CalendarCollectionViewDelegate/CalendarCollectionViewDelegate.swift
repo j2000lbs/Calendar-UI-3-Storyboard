@@ -20,7 +20,7 @@ class CalendarCollectionViewDelegate: NSObject, UICollectionViewDelegate,
 			guard let cell = collectionView.cellForItem(at: indexPath) as? CalendarViewCell
 				else { return false }
 			cell.backgroundColor = UIColor.clear
-			cell.dateCellLabel.textColor = Style.deselecttedCellLabelTextColor
+			cell.dateCellLabel.textColor = Style.deselectedCellLabelTextColor
 		} else {
 			return true
 		}
@@ -43,7 +43,7 @@ class CalendarCollectionViewDelegate: NSObject, UICollectionViewDelegate,
 		guard let cell = collectionView.cellForItem(at: indexPath) as? CalendarViewCell
 			else { return }
 		cell.backgroundColor = UIColor.clear
-		cell.dateCellLabel.textColor = Style.deselecttedCellLabelTextColor
+		cell.dateCellLabel.textColor = Style.deselectedCellLabelTextColor
 	}
 	
 	
