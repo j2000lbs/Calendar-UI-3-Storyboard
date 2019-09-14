@@ -12,7 +12,7 @@ struct SkyBlueNightskyThemeHelper {
 	
 	let calendarViewController = (UIApplication.shared.keyWindow!.rootViewController as! UINavigationController).viewControllers.first as! CalendarViewController
 	
-	// Method used to change the Color Theme from Night Sky to Sky Blue
+	// Method used to change the Color Theme from Night Sky to Sky Blue and back
 	func changeColorTheme(visibleCells: [UICollectionViewCell]) {
 		
 		guard let dayLabels = calendarViewController.dayLabels else {
@@ -24,6 +24,7 @@ struct SkyBlueNightskyThemeHelper {
 		calendarViewController.nextMonthButton.setTitleColor(ColorStyle.nextMonthButtonColor,
 														 for: .normal)
 		calendarViewController.monthYearLabel.textColor = ColorStyle.monthYearLabelColor
+		calendarViewController.colorChangeButton.tintColor = ColorStyle.colorChangeButtonLabelColor
 		
 		for daylabel in dayLabels {
 			daylabel.textColor = ColorStyle.dayNameLabelColor

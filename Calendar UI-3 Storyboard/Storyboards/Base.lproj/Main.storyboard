@@ -191,6 +191,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="KCd-4D-X2o">
+                        <barButtonItem key="leftBarButtonItem" title="Today" id="Xkl-6x-OTa">
+                            <connections>
+                                <action selector="todayButton:" destination="BYZ-38-t0r" id="vTd-jM-FmZ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Sky Blue" id="d46-5u-di7">
                             <connections>
                                 <action selector="changeColorTheme:" destination="BYZ-38-t0r" id="PUh-iH-bRr"/>
@@ -200,15 +205,16 @@
                     <connections>
                         <outlet property="calendarCollectionView" destination="gst-zC-HTa" id="F91-yb-xL1"/>
                         <outlet property="calendarView" destination="OSc-yz-web" id="7g7-80-HQC"/>
+                        <outlet property="colorChangeButton" destination="d46-5u-di7" id="mzu-GI-1IU"/>
                         <outlet property="fridayLabel" destination="xTb-Jn-Cq9" id="ZSE-rc-tI3"/>
                         <outlet property="mondayLabel" destination="1zm-7u-Sxf" id="oKW-2z-Po7"/>
                         <outlet property="monthYearLabel" destination="Jn8-At-mYT" id="j1W-H8-sz0"/>
                         <outlet property="nextMonthButton" destination="1Hh-lc-Xl3" id="huI-Bv-bU4"/>
                         <outlet property="previousMonthButton" destination="xyI-gn-dYp" id="VVY-CU-gOz"/>
-                        <outlet property="rightBarButtomItem" destination="d46-5u-di7" id="mzu-GI-1IU"/>
                         <outlet property="saturdayLabel" destination="PkZ-kU-NE6" id="I4M-Fh-o4H"/>
                         <outlet property="sundayLabel" destination="0NS-my-2n7" id="ht8-Gx-TuE"/>
                         <outlet property="thursdayLabel" destination="tg6-Ne-xAo" id="cMg-Xt-Xdx"/>
+                        <outlet property="todayButton" destination="Xkl-6x-OTa" id="Oqb-Uz-ll4"/>
                         <outlet property="tuesdayLabel" destination="wUv-T5-0iR" id="QSA-nZ-8ck"/>
                         <outlet property="wednesdayLabel" destination="k0G-EF-4KA" id="pnh-0H-cA0"/>
                     </connections>

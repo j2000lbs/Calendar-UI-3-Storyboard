@@ -30,6 +30,7 @@ struct ColorStyle {
 	static var selectedCellLabelTextColor = UIColor.white
 	static var selectedCellBackgroundColor = Colors.nightSky
 	static var dayNameLabelColor = UIColor.white
+	static var colorChangeButtonLabelColor = Colors.skyBlue
 	
 	static func nightSkyTheme() {
 		backgroundColor = Colors.nightSky
@@ -40,6 +41,7 @@ struct ColorStyle {
 		selectedCellLabelTextColor = UIColor.black
 		selectedCellBackgroundColor = Colors.skyBlue
 		dayNameLabelColor = UIColor.white
+		colorChangeButtonLabelColor = Colors.skyBlue
 	}
 	
 	static func skyBlueTheme() {
@@ -51,5 +53,6 @@ struct ColorStyle {
 		selectedCellLabelTextColor = UIColor.white
 		selectedCellBackgroundColor = Colors.nightSky
 		dayNameLabelColor = UIColor.black
+		colorChangeButtonLabelColor = Colors.nightSky
 	}
 }

@@ -21,7 +21,8 @@ class CalendarViewController: UIViewController {
 	
 	@IBOutlet weak var previousMonthButton: UIButton!
 	@IBOutlet weak var nextMonthButton: UIButton!
-	@IBOutlet weak var rightBarButtomItem: UIBarButtonItem!
+	@IBOutlet weak var colorChangeButton: UIBarButtonItem!	// color themes
+	@IBOutlet weak var todayButton: UIBarButtonItem! // Today button
 	
 	@IBOutlet weak var calendarView: UIView!
 	@IBOutlet weak var calendarCollectionView: UICollectionView!
@@ -108,8 +109,9 @@ class CalendarViewController: UIViewController {
 		calendarCollectionView.delegate = calendarCollectionViewDelegate
 		
 		let font = UIFont.systemFont(ofSize: 20)
-		rightBarButtomItem.setTitleTextAttributes([NSAttributedString.Key(rawValue:
+		colorChangeButton.setTitleTextAttributes([NSAttributedString.Key(rawValue:
 			NSAttributedString.Key.font.rawValue): font], for: .normal)
+		todayButton.setTitleTextAttributes([NSAttributedString.Key(rawValue: NSAttributedString.Key.font.rawValue): font], for: .normal)
 	}
 	
 
@@ -125,6 +127,12 @@ class CalendarViewController: UIViewController {
 		}
 		self.view.backgroundColor = ColorStyle.backgroundColor
 		skyBlueNightSkyThemeHelper.changeColorTheme(visibleCells: calendarCollectionView.visibleCells)
+	}
+	
+	
+	// MARK - Add functionality here
+	@IBAction func todayButton(_ sender: UIBarButtonItem) {
+		/* Add functionality to display current month and highlight today's day when button is tapped */
 	}
 	
 	
