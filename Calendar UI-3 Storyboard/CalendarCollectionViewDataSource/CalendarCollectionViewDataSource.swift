@@ -35,6 +35,12 @@ class CalendarCollectionViewDataSource: NSObject, UICollectionViewDataSource {
 
 				cell.isUserInteractionEnabled = false
 				cell.dateCellLabel.textColor = UIColor.lightGray
+			} else if calculateDate == MyCalendar.todaysDate &&
+				MyCalendar.currentMonthNumber == MyCalendar.presentMonthIndex &&
+				MyCalendar.currentYear == MyCalendar.presentYear {
+				
+				cell.backgroundColor = ColorStyle.todaysDateBackgroundColor
+				cell.dateCellLabel.textColor = ColorStyle.todaysDateLabelTextColor
 			} else {
 				cell.isUserInteractionEnabled = true
 				cell.dateCellLabel.textColor = ColorStyle.deselectedCellLabelTextColor

@@ -132,7 +132,15 @@ class CalendarViewController: UIViewController {
 	
 	// MARK - Add functionality here
 	@IBAction func todayButton(_ sender: UIBarButtonItem) {
-		/* Add functionality to display current month and highlight today's day when button is tapped */
+		MyCalendar.currentMonthNumber = Calendar.current.component(.month, from: Date())
+		MyCalendar.currentYear = Calendar.current.component(.year, from: Date())
+		MyCalendar.todaysDate = Calendar.current.component(.day, from: Date())
+		//  - 1 used to access the correct month name from the array
+		monthYearLabel.text =
+		"\(MyCalendar.monthNames[MyCalendar.currentMonthNumber - 1]) \(MyCalendar.currentYear)"
+		didChange(month: MyCalendar.currentMonthNumber, year: MyCalendar.currentYear)
+		
+		/* Add functionality to highlight today's day when Today button is tapped */
 	}
 	
 	
@@ -142,7 +150,7 @@ class CalendarViewController: UIViewController {
 			MyCalendar.currentMonthNumber = 12
 			MyCalendar.currentYear -= 1
 		}
-		//  Added - 1 to access the correct month name from the array
+		//  - 1 used to access the correct month name from the array
 		monthYearLabel.text =
 			"\(MyCalendar.monthNames[MyCalendar.currentMonthNumber - 1]) \(MyCalendar.currentYear)"
 		didChange(month: MyCalendar.currentMonthNumber, year: MyCalendar.currentYear)

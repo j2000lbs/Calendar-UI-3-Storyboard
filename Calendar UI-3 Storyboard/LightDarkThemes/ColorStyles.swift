@@ -19,9 +19,11 @@ struct ColorStyle {
 	struct Colors {
 		static var skyBlue = #colorLiteral(red: 0.4620226622, green: 0.8382837176, blue: 1, alpha: 1)
 		static var nightSky = #colorLiteral(red: 0.08967345208, green: 0.2006737888, blue: 0.6619026065, alpha: 1)
+		static var today = UIColor.red
 	}
 	
-	
+	static var todaysDateBackgroundColor = Colors.today	// Doesn't change for Theme change
+	static var todaysDateLabelTextColor = UIColor.white	// Doesn't change for Theme change
 	static var backgroundColor = UIColor.white
 	static var monthYearLabelColor = UIColor.white
 	static var nextMonthButtonColor = UIColor.white

@@ -29,8 +29,9 @@ struct SkyBlueNightskyThemeHelper {
 		for daylabel in dayLabels {
 			daylabel.textColor = ColorStyle.dayNameLabelColor
 		}
+			
 		
-		/* The following loop will set all of the cells of the dates of the month that haven't passed, therefore UserInteraction is enabled, to the deselected value.  The selected cell, if there is one, will remain with the selected values. */
+		/* The following loop will set all of the cells of the dates of the month that haven't passed, therefore UserInteraction is enabled, to the deselected value.  The selected cell, if there is one, will remain with the selected values, along with Today's date. */
 		for cell in visibleCells {
 			guard let dateCell = cell as? CalendarViewCell
 				else { return }
@@ -40,6 +41,13 @@ struct SkyBlueNightskyThemeHelper {
 			if dateCell.isSelected {
 				dateCell.backgroundColor = ColorStyle.selectedCellBackgroundColor
 				dateCell.dateCellLabel.textColor = ColorStyle.selectedCellLabelTextColor
+			}
+			if dateCell.dateCellLabel.text == String(MyCalendar.todaysDate) &&
+				MyCalendar.currentYear == MyCalendar.presentYear &&
+				MyCalendar.currentMonthNumber == MyCalendar.presentMonthIndex {
+				
+				dateCell.backgroundColor = ColorStyle.todaysDateBackgroundColor
+				dateCell.dateCellLabel.textColor = ColorStyle.todaysDateLabelTextColor
 			}
 		}
 	}
