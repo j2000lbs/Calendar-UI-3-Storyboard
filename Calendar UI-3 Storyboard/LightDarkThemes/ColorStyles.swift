@@ -12,12 +12,12 @@ import UIKit
 struct ColorStyle {
 	
 	enum ColorThemes {
-		case skyBlue
+		case daySky
 		case nightSky
 	}
 	
 	struct Colors {
-		static var skyBlue = #colorLiteral(red: 0.4620226622, green: 0.8382837176, blue: 1, alpha: 1)
+		static var daySky = #colorLiteral(red: 0.8760148883, green: 0.9612295032, blue: 0.9575074315, alpha: 1)
 		static var nightSky = #colorLiteral(red: 0.08967345208, green: 0.2006737888, blue: 0.6619026065, alpha: 1)
 		static var today = UIColor.red
 	}
@@ -32,7 +32,7 @@ struct ColorStyle {
 	static var selectedCellLabelTextColor = UIColor.white
 	static var selectedCellBackgroundColor = Colors.nightSky
 	static var dayNameLabelColor = UIColor.white
-	static var colorChangeButtonLabelColor = Colors.skyBlue
+	static var colorChangeButtonLabelColor = Colors.daySky
 	
 	static func nightSkyTheme() {
 		backgroundColor = Colors.nightSky
@@ -41,13 +41,13 @@ struct ColorStyle {
 		previousMonthButtonColor = UIColor.white
 		deselectedCellLabelTextColor = UIColor.white
 		selectedCellLabelTextColor = UIColor.black
-		selectedCellBackgroundColor = Colors.skyBlue
+		selectedCellBackgroundColor = Colors.daySky
 		dayNameLabelColor = UIColor.white
-		colorChangeButtonLabelColor = Colors.skyBlue
+		colorChangeButtonLabelColor = Colors.daySky
 	}
 	
-	static func skyBlueTheme() {
-		backgroundColor = Colors.skyBlue
+	static func daySkyTheme() {
+		backgroundColor = Colors.daySky
 		monthYearLabelColor = UIColor.black
 		nextMonthButtonColor = UIColor.black
 		previousMonthButtonColor = UIColor.black

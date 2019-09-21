@@ -16,7 +16,7 @@ struct SkyBlueNightskyThemeHelper {
 	func changeColorTheme(visibleCells: [UICollectionViewCell]) {
 		
 		guard let dayLabels = calendarViewController.dayLabels else {
-			print("dayLabels was nil in changeColorTheme()")
+			print("dayLabels was nil in changeLightTheme()")
 			return }
 		
 		calendarViewController.previousMonthButton.setTitleColor(ColorStyle.previousMonthButtonColor,

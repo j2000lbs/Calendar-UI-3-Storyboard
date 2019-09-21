@@ -196,9 +196,9 @@
                                 <action selector="todayButton:" destination="BYZ-38-t0r" id="vTd-jM-FmZ"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Sky Blue" id="d46-5u-di7">
+                        <barButtonItem key="rightBarButtonItem" title="Day" id="d46-5u-di7">
                             <connections>
-                                <action selector="changeColorTheme:" destination="BYZ-38-t0r" id="PUh-iH-bRr"/>
+                                <action selector="changeLightTheme:" destination="BYZ-38-t0r" id="PUh-iH-bRr"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

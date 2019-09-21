@@ -115,13 +115,13 @@ class CalendarViewController: UIViewController {
 	}
 	
 
-	@IBAction func changeColorTheme(_ sender: UIBarButtonItem) {
+	@IBAction func changeLightTheme(_ sender: UIBarButtonItem) {
 		if MyCalendar.theme == .nightSky {
-			sender.title = "Night Sky"
-			MyCalendar.theme = .skyBlue
-			ColorStyle.skyBlueTheme()
+			sender.title = "Night"
+			MyCalendar.theme = .daySky
+			ColorStyle.daySkyTheme()
 		} else {
-			sender.title = "Sky Blue"
+			sender.title = "Day"
 			MyCalendar.theme = .nightSky
 			ColorStyle.nightSkyTheme()
 		}
